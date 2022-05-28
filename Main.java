@@ -6,5 +6,8 @@ public class Main {
         System.out.println(liczba);
 
         System.out.println(liczba * 90);
+        System.out.println(liczba * 90);
+        System.out.println(liczba * 90);
+        
     }
 }
