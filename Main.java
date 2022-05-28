@@ -5,5 +5,6 @@ public class Main {
         int liczba = 10;
         System.out.println(liczba);
 
+        System.out.println(liczba * 90);
     }
 }
