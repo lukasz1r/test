@@ -2,11 +2,11 @@ public class Czas {
     private int godzina, minuta;
 
     public int getGodzina(){
-        return 0;
+        return godzina;
     }
 
     public int getMinuta(){
-        return 0;
+        return minuta;
     }
 
 
