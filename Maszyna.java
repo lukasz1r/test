@@ -16,10 +16,8 @@ public class Maszyna {
         return nazwa;
     }
 
-    Maszyna(String nazwa, int iloscMiejsc, int zasieg){
+    Maszyna(String nazwa){
         this.nazwa = nazwa;
-        this.iloscMiejsc = iloscMiejsc;
-        this.zasieg = zasieg;
     }
 
 }

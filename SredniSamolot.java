@@ -3,10 +3,10 @@ public class SredniSamolot extends Maszyna{
     protected int zasieg = 3000;
     protected String nazwa;
 
-    SredniSamolot(String nazwa, int iloscMiejsc, int zasieg){
-        super(nazwa, iloscMiejsc, zasieg);
+    SredniSamolot(String nazwa){
+        super(nazwa);
         this.nazwa = nazwa;
-        this.iloscMiejsc = iloscMiejsc;
-        this.zasieg = zasieg;
+        iloscMiejsc = 100;
+        zasieg = 3000;
     }
 }
