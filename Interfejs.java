@@ -9,5 +9,8 @@ public class Interfejs {
         komenda.baza.Lotniska.add(Warszawa);
         komenda.baza.Lotniska.add(Berlin);
         
+        komenda.dodajSamolot();
+        // System.out.println(komenda.baza.Maszyny); 
+        
     }
 }

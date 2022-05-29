@@ -38,6 +38,15 @@ public class Komendy {
         baza.Lotniska.remove(iter); 
     }
 
-    
+    public void dodajSamolot(){
+        System.out.println("Podaj nazwe samolotu: ");
+        String nazwa = scan.nextLine();
+        System.out.println("Podaj ilosc wymaganych miejsc: ");
+        int iloscMiejsc = scan.nextInt();
+
+        Maszyna samolot = new Maszyna(nazwa, iloscMiejsc);
+        baza.Maszyny.add(samolot);
+
+    }
    
 }
