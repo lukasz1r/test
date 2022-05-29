@@ -2,11 +2,10 @@ import java.util.Scanner;
 public class Komendy {
     //public aaby szybciej
 
-    Scanner scan = new Scanner(System.in);
     public BazaDanych baza = new BazaDanych();
 
     public void dodajLotnisko(){
-        
+        Scanner scan = new Scanner(System.in);
         String nazwaTemp;
         int xTemp, yTemp;
 
@@ -21,9 +20,11 @@ public class Komendy {
 
         Lotnisko lotnisko = new Lotnisko(nazwaTemp, xTemp, yTemp);
         baza.Lotniska.add(lotnisko);
+        scan.close();
     }
 
     public void usunLotnisko(){
+        Scanner scan = new Scanner(System.in);
         int iter = 0;
         System.out.println("Podaj nazwe lotniska do usuniecia: ");
         String nazwaDoUsuniecia = scan.nextLine();
@@ -36,22 +37,32 @@ public class Komendy {
             iter++;
         }
         baza.Lotniska.remove(iter); 
+        scan.close();
     }
 
     public void dodajSamolot(){
         
-        System.out.println("Podaj nazwe samolotu: ");
-        String nazwa = scan.nextLine();
-        System.out.println("Podaj ilosc wymaganych miejsc: ");
-        int iloscMiejsc = scan.nextInt();
-
+        int iloscMiejsc = 0;
+        String nazwa = " ";
+        Scanner scan = new Scanner(System.in);
+        
+            System.out.println("Podaj nazwe samolotu: ");   //  KUUUUUURWAAAAAAAAA CZEMU TO SIĘ TAK JEBIE I POMIJA TEN SCANER WSZYSTKO ZROBIŁEM ABY TO NAPRAWIDC I CHUJ
+            nazwa = scan.nextLine();
+        
+        
+            System.out.println("Podaj ilosc wymaganych miejsc: ");
+            iloscMiejsc = scan.nextInt();
+        
+        
         Maszyna samolot = new Maszyna(nazwa, iloscMiejsc);
         samolot.dodajSamolot();
+        
         baza.Maszyny.add(samolot);
-
+        scan.close();
     }
   
     public void usunSamolot(){
+        Scanner scan = new Scanner(System.in);
         int iter = 0;
         System.out.println("Podaj nazwe samolotu do usuniecia: ");
         String nazwaDoUsuniecia = scan.nextLine();
@@ -64,5 +75,7 @@ public class Komendy {
             iter++;
         }
         baza.Maszyny.remove(iter); 
+        scan.close();
     }
+    
 }
