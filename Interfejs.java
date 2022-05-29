@@ -11,6 +11,7 @@ public class Interfejs {
         System.out.println(awionetka.zasieg);
         Komendy komenda = new Komendy();
         komenda.dodajLotnisko();   
+        komenda.dodajLotnisko();   
         System.out.println(komenda.baza.Lotniska);     
     }
 }
