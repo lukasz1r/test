@@ -38,4 +38,6 @@ public class Komendy {
         baza.Lotniska.remove(iter); 
     }
 
+    
+   
 }

@@ -4,10 +4,10 @@ public class MalySamolot extends Maszyna{
     protected int zasieg;
     protected String nazwa;
 
-    MalySamolot(String nazwa){
-        super(nazwa);
+    MalySamolot(String nazwa, int iloscMiejsc){
+        super(nazwa, iloscMiejsc);
         this.nazwa = nazwa;
-        iloscMiejsc = 50;
+        this.iloscMiejsc = 50;
         zasieg = 2000;
     }
 

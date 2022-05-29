@@ -9,14 +9,5 @@ public class Interfejs {
         komenda.baza.Lotniska.add(Warszawa);
         komenda.baza.Lotniska.add(Berlin);
         
-
-        
-        
-        // komenda.dodajLotnisko();   
-        // komenda.dodajLotnisko();   
-        // System.out.println(komenda.baza.Lotniska);
-        komenda.baza.getLotniska();
-        komenda.usunLotnisko();     
-        komenda.baza.getLotniska();
     }
 }
