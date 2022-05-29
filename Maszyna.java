@@ -1,15 +1,25 @@
 public class Maszyna {
     
+    protected int iloscMiejsc;
+    protected String nazwa;
+    protected int zasieg;
+
     public int getMiejsca(){
-        return 0;
+        return iloscMiejsc;
     }
 
     public int getZasieg(){
-        return 0;
+        return zasieg;
     }
 
     public String getNazwa(){
-        return " brak ";
+        return nazwa;
+    }
+
+    Maszyna(String nazwa, int iloscMiejsc, int zasieg){
+        this.nazwa = nazwa;
+        this.iloscMiejsc = iloscMiejsc;
+        this.zasieg = zasieg;
     }
 
 }
