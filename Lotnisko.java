@@ -9,6 +9,10 @@ public class Lotnisko {
         this.y = y;
     }
 
+    public String getNazwa(){
+        return nazwa;
+    }
+    
     public int getX(){
         return x;
     }
