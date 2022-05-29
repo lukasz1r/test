@@ -28,10 +28,10 @@ public class Maszyna {
             SredniSamolot samolot = new SredniSamolot(nazwa, 100);
         }
         if(iloscMiejsc>100 && iloscMiejsc<=200){
-            DuzySamolot samolot = new DuzySamolot(nazwa, 100);
+            DuzySamolot samolot = new DuzySamolot(nazwa, 200);
         }
         if(iloscMiejsc>200 && iloscMiejsc<=400){
-            WielkiSamolot samolot = new WielkiSamolot(nazwa, 100);
+            WielkiSamolot samolot = new WielkiSamolot(nazwa, 400);
         }
     }
 

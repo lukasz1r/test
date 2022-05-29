@@ -1,7 +1,7 @@
 public class Interfejs {
     public static void main(String[] args) {
         
-        MalySamolot awionetka = new MalySamolot("Awionetka");
+        MalySamolot awionetka = new MalySamolot("Awionetka", 40);
 
         Komendy komenda = new Komendy();
         Lotnisko Warszawa = new Lotnisko("Warszawa", 25, 40);
