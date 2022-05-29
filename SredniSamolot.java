@@ -1,6 +1,6 @@
 public class SredniSamolot {
-    protected int iloscMiejsc;
-    protected int zasieg;
+    protected int iloscMiejsc = 100;
+    protected int zasieg = 3000;
     protected String nazwa;
 
     SredniSamolot(String nazwa){
