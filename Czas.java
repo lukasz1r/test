@@ -8,6 +8,4 @@ public class Czas {
     public int getMinuta(){
         return minuta;
     }
-
-
 }
