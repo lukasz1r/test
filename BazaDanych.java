@@ -17,7 +17,7 @@ public class BazaDanych {
 
     public void getSamoloty(){
         int iter = 1;
-        System.out.println("Lista samolotów: ");
+        System.out.println("Lista samolotow: ");
         for(Maszyna i : Maszyny){
             System.out.println(iter + ".  " + i.getNazwa() + " | " + i.getMiejsca() + " | " + i.getZasieg());
             iter++;

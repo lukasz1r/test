@@ -6,7 +6,7 @@ public class SredniSamolot extends Maszyna{
     SredniSamolot(String nazwa, int iloscMiejsc){
         super(nazwa, iloscMiejsc);
         this.nazwa = nazwa;
-        iloscMiejsc = 100;
+        this.iloscMiejsc = 100; 
         zasieg = 3000;
     }
 }

@@ -39,14 +39,30 @@ public class Komendy {
     }
 
     public void dodajSamolot(){
+        
         System.out.println("Podaj nazwe samolotu: ");
         String nazwa = scan.nextLine();
         System.out.println("Podaj ilosc wymaganych miejsc: ");
         int iloscMiejsc = scan.nextInt();
 
         Maszyna samolot = new Maszyna(nazwa, iloscMiejsc);
+        samolot.dodajSamolot();
         baza.Maszyny.add(samolot);
 
     }
-   
+  
+    public void usunSamolot(){
+        int iter = 0;
+        System.out.println("Podaj nazwe samolotu do usuniecia: ");
+        String nazwaDoUsuniecia = scan.nextLine();
+
+        for(Maszyna i : baza.Maszyny){
+            if(i.getNazwa().equals(nazwaDoUsuniecia)){
+                System.out.println("Usunieto maszyne: " + i.getNazwa());
+                break;
+            }
+            iter++;
+        }
+        baza.Maszyny.remove(iter); 
+    }
 }

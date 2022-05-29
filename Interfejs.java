@@ -1,7 +1,7 @@
 public class Interfejs {
     public static void main(String[] args) {
         
-        MalySamolot awionetka = new MalySamolot("Awionetka", 40);
+        
 
         Komendy komenda = new Komendy();
         Lotnisko Warszawa = new Lotnisko("Warszawa", 25, 40);
@@ -10,7 +10,13 @@ public class Interfejs {
         komenda.baza.Lotniska.add(Berlin);
         
         komenda.dodajSamolot();
+        
+        System.out.println(komenda.baza.Maszyny); 
         // System.out.println(komenda.baza.Maszyny); 
+        komenda.baza.getSamoloty();
+        // komenda.usunSamolot();
+        
+        komenda.baza.getSamoloty();
         
     }
 }
