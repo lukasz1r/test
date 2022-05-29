@@ -25,17 +25,17 @@ public class Komendy {
 
     public void usunLotnisko(){
         int iter = 0;
-        // System.out.println("Podaj nazwe lotniska do usuniecia: ");
-        String nazwaDoUsuniecia = "Berlin";
+        System.out.println("Podaj nazwe lotniska do usuniecia: ");
+        String nazwaDoUsuniecia = scan.nextLine();
 
         for(Lotnisko i : baza.Lotniska){
             if(i.getNazwa().equals(nazwaDoUsuniecia)){
-                baza.Lotniska.remove(i); //nie działa XD
-                baza.Lotniska.remove(iter); // nie działa XD
                 System.out.println("Usunieto lotnisko: " + i.getNazwa());
+                break;
             }
             iter++;
         }
+        baza.Lotniska.remove(iter); 
     }
 
 }
