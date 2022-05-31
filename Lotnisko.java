@@ -5,7 +5,6 @@ public class Lotnisko{
     private int x, y;
 
     Lotnisko(String nazwa, int x, int y){
-        
         this.nazwa = nazwa;
         this.x = x;
         this.y = y;
@@ -19,7 +18,7 @@ public class Lotnisko{
         return x;
     }
 
-    public int getY(){
+    public int getY() {
         return y;
     }   
 

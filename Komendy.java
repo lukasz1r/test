@@ -3,7 +3,6 @@ public class Komendy {
     //public aaby szybciej
 
     public BazaDanych baza = new BazaDanych();
-
     public void dodajLotnisko(){
         Scanner scan = new Scanner(System.in);
         String nazwaTemp;
@@ -20,7 +19,6 @@ public class Komendy {
 
         Lotnisko lotnisko = new Lotnisko(nazwaTemp, xTemp, yTemp);
         baza.Lotniska.add(lotnisko);
-        scan.close();
     }
 
     public void usunLotnisko(){
@@ -36,46 +34,39 @@ public class Komendy {
             }
             iter++;
         }
-        baza.Lotniska.remove(iter); 
-        scan.close();
+        baza.Lotniska.remove(iter);
     }
 
     public void dodajSamolot(){
-        
-        int iloscMiejsc = 0;
-        String nazwa = " ";
+        String nazwa;
         Scanner scan = new Scanner(System.in);
-        
-            System.out.println("Podaj nazwe samolotu: ");   //  KUUUUUURWAAAAAAAAA CZEMU TO SIĘ TAK JEBIE I POMIJA TEN SCANER WSZYSTKO ZROBIŁEM ABY TO NAPRAWIDC I CHUJ
-            nazwa = scan.nextLine();
-        
-        
-            System.out.println("Podaj ilosc wymaganych miejsc: ");
-            iloscMiejsc = scan.nextInt();
-        
-        
-        Maszyna samolot = new Maszyna(nazwa, iloscMiejsc);
-        samolot.dodajSamolot();
-        
+        System.out.print("Podaj nazwe samolotu: ");
+        nazwa = scan.next();
+        SredniSamolot samolot = new SredniSamolot(nazwa);
         baza.Maszyny.add(samolot);
-        scan.close();
     }
   
     public void usunSamolot(){
         Scanner scan = new Scanner(System.in);
-        int iter = 0;
-        System.out.println("Podaj nazwe samolotu do usuniecia: ");
+        int iter = 0,pom = 0;
+        String temp="";
+        System.out.print("Podaj nazwe samolotu do usuniecia: ");
         String nazwaDoUsuniecia = scan.nextLine();
 
         for(Maszyna i : baza.Maszyny){
             if(i.getNazwa().equals(nazwaDoUsuniecia)){
-                System.out.println("Usunieto maszyne: " + i.getNazwa());
+                pom = 1;
+                temp=i.getNazwa();
                 break;
             }
             iter++;
         }
-        baza.Maszyny.remove(iter); 
-        scan.close();
+        if(pom==1){
+            System.out.println("Usunieto samolot "+temp);
+            baza.Maszyny.remove(iter);
+        }
+        else {
+            System.out.println("Brak samolotu w bazie");
+        }
     }
-    
 }

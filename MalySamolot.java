@@ -1,14 +1,12 @@
 public class MalySamolot extends Maszyna{
     
-    protected int iloscMiejsc;
-    protected int zasieg;
-    protected String nazwa;
+    protected int iloscMiejsc=20;
+    protected int zasieg=500;
 
-    MalySamolot(String nazwa, int iloscMiejsc){
-        super(nazwa, iloscMiejsc);
-        this.nazwa = nazwa;
-        this.iloscMiejsc = 50;
-        zasieg = 2000;
+    MalySamolot(String nazwa){
+        super.iloscMiejsc=iloscMiejsc;
+        super.nazwa=nazwa;
+        super.zasieg=zasieg;
     }
 
 
