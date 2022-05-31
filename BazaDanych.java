@@ -22,6 +22,5 @@ public class BazaDanych {
             System.out.println(iter + ".  " + i.getNazwa() + " | " + i.getMiejsca() + " | " + i.getZasieg());
             iter++;
         }
-        siur
     }
 }
