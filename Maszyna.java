@@ -14,5 +14,5 @@ public abstract class Maszyna {
     public String getNazwa(){
         return nazwa;
     }
- xxx
+ 
 }
