@@ -39,10 +39,34 @@ public class Komendy {
 
     public void dodajSamolot(){
         String nazwa;
+        int x=5;
+        Maszyna samolot = null;
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj nazwe samolotu: ");
         nazwa = scan.next();
-        SredniSamolot samolot = new SredniSamolot(nazwa);
+        while(x==5){
+        System.out.println("Wybierz rozmiar samolotu:");
+        System.out.println("1. Maly");
+        System.out.println("2. Sredni");
+        System.out.println("3. Duzy");
+        System.out.println("4. Wielki");
+        x=scan.nextInt();
+        switch (x) {
+            case 1:
+            samolot = new MalySamolot(nazwa);
+                break;
+            case 2:
+            samolot = new SredniSamolot(nazwa);
+                break;
+            case 3:
+            samolot = new DuzySamolot(nazwa);
+                break;
+            case 4:
+            samolot = new WielkiSamolot(nazwa);
+                break;
+            default: x=5;
+        }
+    }
         baza.Maszyny.add(samolot);
     }
   
