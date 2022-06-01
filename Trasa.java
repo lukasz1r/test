@@ -3,8 +3,7 @@ public class Trasa {
     private Lotnisko poczatek, koniec;
     private String przypisanaMaszyna;
     private int iloscMiejsc,czestotliwosc;
-    private float cena;
-    private double odleglosc;
+    private double odleglosc,cena;
     private Czas czasOdlotu;
 
     Trasa(Lotnisko a, Lotnisko b, int czestotliwosc, Czas czas){
@@ -13,6 +12,7 @@ public class Trasa {
         this.czestotliwosc = czestotliwosc;
         czasOdlotu = czas;
         odleglosc=Math.sqrt(Math.pow(a.getX()-b.getX(),2)+Math.pow(a.getY()-b.getY(),2));
+        cena = odleglosc*2.45;
     }
 
     public void zakup(){
@@ -23,7 +23,7 @@ public class Trasa {
         return iloscMiejsc;
     }
 
-    public float getCena(){
+    public double getCena(){
         return cena;
     }
     public double getOdleglosc(){
@@ -32,6 +32,14 @@ public class Trasa {
 
     public Czas getCzas(){
         return czasOdlotu;
+    }
+
+    public Lotnisko getPoczatek(){
+        return poczatek;
+    }
+    
+    public Lotnisko getKoniec(){
+        return koniec;
     }
 
 
