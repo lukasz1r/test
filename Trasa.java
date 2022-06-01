@@ -1,6 +1,5 @@
 public class Trasa {
     
-    BazaDanych baza = new BazaDanych();
     private Lotnisko poczatek, koniec;
     private String przypisanaMaszyna;
     public int iloscMiejsc,czestotliwosc; //temp

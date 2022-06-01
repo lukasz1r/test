@@ -1,8 +1,7 @@
 import java.util.Scanner;
-public class Komendy {
-    //public aaby szybciej
+public abstract class Komendy {
 
-    public void dodajLotnisko(){
+    public static void dodajLotnisko(){
         Scanner scan = new Scanner(System.in);
         String nazwaTemp;
         int xTemp, yTemp;
@@ -20,7 +19,7 @@ public class Komendy {
         BazaDanych.Lotniska.add(lotnisko);
     }
 
-    public void usunLotnisko(){
+    public static void usunLotnisko(){
         Scanner scan = new Scanner(System.in);
         int iter = 0;
         System.out.println("Podaj nazwe lotniska do usuniecia: ");
@@ -36,7 +35,7 @@ public class Komendy {
         BazaDanych.Lotniska.remove(iter);
     }
 
-    public void dodajSamolot(){
+    public static void dodajSamolot(){
         String nazwa;
         int x=5;
         Maszyna samolot = null;
@@ -69,7 +68,7 @@ public class Komendy {
         BazaDanych.Maszyny.add(samolot);
     }
   
-    public void usunSamolot(){
+    public static void usunSamolot(){
         Scanner scan = new Scanner(System.in);
         int iter = 0,pom = 0;
         String temp="";
@@ -93,7 +92,7 @@ public class Komendy {
         }
     }
 
-    public void dodajTrase() {
+    public static void dodajTrase() {
         String x1,x2;
         int g,m,czestotliwosc;
         Scanner scan = new Scanner(System.in);

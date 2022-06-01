@@ -1,8 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BazaDanych {
-    //public aby szybko testować
+public abstract class BazaDanych {
     public static List<Lotnisko> Lotniska = new ArrayList<>();
     public static List<Maszyna> Maszyny = new ArrayList<>();
     public static List<Trasa> Trasy = new ArrayList<>();
