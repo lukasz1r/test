@@ -8,5 +8,3 @@ public class DuzySamolot extends Maszyna{
         super.zasieg=zasieg;
     }
 }
- 
-//cipa cipa
