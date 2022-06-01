@@ -9,3 +9,4 @@ public class DuzySamolot extends Maszyna{
     }
 }
 //chuj
+//sranie na pb
