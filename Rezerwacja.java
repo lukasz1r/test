@@ -1,13 +1,14 @@
 public class Rezerwacja{
 
-    private float cena;
+    BazaDanych baza = new BazaDanych();
+    private double cena; 
     private Trasa trasa;
     private Czas czas;
 
     Rezerwacja(Trasa trasa){
         this.trasa = trasa;
         this.cena = trasa.getCena();
-        this.czas = trasa.getCzas();        
+        this.czas = trasa.getCzas();   
     }
 
     

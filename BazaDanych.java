@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class BazaDanych {
-    //public aby szybko testować
-    public List<Lotnisko> Lotniska = new ArrayList<Lotnisko>();
-    public List<Maszyna> Maszyny = new ArrayList<Maszyna>();
+public abstract class BazaDanych {
+    public static List<Lotnisko> Lotniska = new ArrayList<>();
+    public static List<Maszyna> Maszyny = new ArrayList<>();
+    public static List<Trasa> Trasy = new ArrayList<>();
+    public static List<Rezerwacja> Rezerwacje = new ArrayList<>();
 
     public void getLotniska(){
         int iter = 1;
