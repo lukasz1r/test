@@ -1,8 +1,9 @@
 public class Trasa {
     
+    BazaDanych baza = new BazaDanych();
     private Lotnisko poczatek, koniec;
     private String przypisanaMaszyna;
-    private int iloscMiejsc,czestotliwosc;
+    public int iloscMiejsc,czestotliwosc; //temp
     private double odleglosc,cena;
     private Czas czasOdlotu;
 

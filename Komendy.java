@@ -2,7 +2,6 @@ import java.util.Scanner;
 public class Komendy {
     //public aaby szybciej
 
-    public BazaDanych baza = new BazaDanych();
     public void dodajLotnisko(){
         Scanner scan = new Scanner(System.in);
         String nazwaTemp;
@@ -18,7 +17,7 @@ public class Komendy {
         yTemp = scan.nextInt();
 
         Lotnisko lotnisko = new Lotnisko(nazwaTemp, xTemp, yTemp);
-        baza.Lotniska.add(lotnisko);
+        BazaDanych.Lotniska.add(lotnisko);
     }
 
     public void usunLotnisko(){
@@ -27,14 +26,14 @@ public class Komendy {
         System.out.println("Podaj nazwe lotniska do usuniecia: ");
         String nazwaDoUsuniecia = scan.nextLine();
 
-        for(Lotnisko i : baza.Lotniska){
+        for(Lotnisko i : BazaDanych.Lotniska){
             if(i.getNazwa().equals(nazwaDoUsuniecia)){
                 System.out.println("Usunieto lotnisko: " + i.getNazwa());
                 break;
             }
             iter++;
         }
-        baza.Lotniska.remove(iter);
+        BazaDanych.Lotniska.remove(iter);
     }
 
     public void dodajSamolot(){
@@ -67,7 +66,7 @@ public class Komendy {
             default: x=5;
         }
     }
-        baza.Maszyny.add(samolot);
+        BazaDanych.Maszyny.add(samolot);
     }
   
     public void usunSamolot(){
@@ -77,7 +76,7 @@ public class Komendy {
         System.out.print("Podaj nazwe samolotu do usuniecia: ");
         String nazwaDoUsuniecia = scan.nextLine();
 
-        for(Maszyna i : baza.Maszyny){
+        for(Maszyna i : BazaDanych.Maszyny){
             if(i.getNazwa().equals(nazwaDoUsuniecia)){
                 pom = 1;
                 temp=i.getNazwa();
@@ -87,10 +86,39 @@ public class Komendy {
         }
         if(pom==1){
             System.out.println("Usunieto samolot "+temp);
-            baza.Maszyny.remove(iter);
+            BazaDanych.Maszyny.remove(iter);
         }
         else {
             System.out.println("Brak samolotu w bazie");
         }
     }
-}
+
+    public void dodajTrase() {
+        String x1,x2;
+        int g,m,czestotliwosc;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Podaj czas odlotu: ");
+        System.out.print("godzina: ");
+        g=scan.nextInt();
+        System.out.print("minuta: ");
+        m=scan.nextInt();
+        Czas czas = new Czas(g, m);
+        System.out.println("Wybierz czestotliwosc: \n 1 - codziennie \n 2 - raz w tygodniu \n 3 - co dwa tygodnie");
+        czestotliwosc = scan.nextInt();
+        System.out.print("Wybierz lotnisko poczatkowe: ");
+        x1 = scan.next();
+        for(Lotnisko z : BazaDanych.Lotniska){
+            if(z.getNazwa().equals(x1)){
+                System.out.print("Wybierz lotnisko koncowe: ");
+                x2 = scan.next();
+                for(Lotnisko y : BazaDanych.Lotniska){
+                    if(y.getNazwa().equals(x2)){
+                        Trasa trasa = new Trasa(z, y, czestotliwosc, czas);
+                        BazaDanych.Trasy.add(trasa);
+                        }
+                    }
+                }
+            }
+        }
+    }
+

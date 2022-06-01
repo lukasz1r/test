@@ -25,6 +25,4 @@ public class Lotnisko{
     public String toString(){
         return nazwa + " | " + x + " | " + y + "\n";
     }
-
-
 }

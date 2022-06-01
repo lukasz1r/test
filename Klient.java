@@ -7,7 +7,6 @@ public class Klient {
     private String imie, nazwisko, PESEL;
 
     List<Rezerwacja> wykupioneLoty = new ArrayList<Rezerwacja>();
-    BazaDanych baza = new BazaDanych();
 
     Klient(String imie, String nazwisko, String PESEL){
         this.imie = imie;
@@ -16,19 +15,20 @@ public class Klient {
     }
 
     public void rezerwujLot(){
-        String x;
+        String x1,x2;
         Scanner scan = new Scanner(System.in);
-        System.out.print("Wybierz lotnisko początkowe: ");
-        x = scan.next();
-        for(Lotnisko z : baza.Lotniska){
-            if(z.equals(x)){
+        System.out.print("Wybierz lotnisko poczatkowe: ");
+        x1 = scan.next();
+        for(Lotnisko z : BazaDanych.Lotniska){
+            if(z.getNazwa().equals(x1)){
                 System.out.print("Wybierz lotnisko koncowe: ");
-                x = scan.next();
-                for(Lotnisko y : baza.Lotniska){
-                    if(y.equals(x)){
-                        for(Trasa i : baza.Trasy){
-                            if(z.equals(i.getPoczatek())&&y.equals(i.getKoniec())){
+                x2 = scan.next();
+                for(Lotnisko y : BazaDanych.Lotniska){
+                    if(y.getNazwa().equals(x2)){
+                        for(Trasa i : BazaDanych.Trasy){
+                            if(z.getNazwa().equals(i.getPoczatek().getNazwa())&&y.getNazwa().equals(i.getKoniec().getNazwa())){
                                 Rezerwacja lot = new Rezerwacja(i);
+                                BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
                                 i.zakup();
                             }

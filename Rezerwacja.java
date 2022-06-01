@@ -9,9 +9,6 @@ public class Rezerwacja{
         this.trasa = trasa;
         this.cena = trasa.getCena();
         this.czas = trasa.getCzas();   
-        baza.Rezerwacje.add(this);     //nie wiem czy to tak działa trzeba ogarnąć
-        //najwyzej jak sie wypierdoli to dodwanie do listy zrobimy w komendach 
-        //tera mi sie nie chce sprawdzac xdd
     }
 
     
