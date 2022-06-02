@@ -43,5 +43,12 @@ public class Trasa {
         return koniec;
     }
 
+    public Maszyna getMaszyna(){
+        return przypisanaMaszyna;
+    }
+
+    public int getCzestotliwosc(){
+        return czestotliwosc;
+    }
 
 }

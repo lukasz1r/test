@@ -38,4 +38,13 @@ public class Klient {
             }
         }
     }
+    public String getImie() {
+        return imie;
+    }
+    public String getNazwisko() {
+        return nazwisko;
+    }
+    public String getPESEL() {
+        return PESEL;
+    }
 }
