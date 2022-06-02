@@ -1,6 +1,5 @@
 public class Rezerwacja{
 
-    
     private double cena; 
     private Trasa trasa;
     private Czas czas;

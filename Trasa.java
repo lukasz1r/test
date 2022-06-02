@@ -1,17 +1,18 @@
 public class Trasa {
     
     private Lotnisko poczatek, koniec;
-    private String przypisanaMaszyna;
-    public int iloscMiejsc,czestotliwosc; //temp
+    private Maszyna przypisanaMaszyna;
+    private int iloscMiejsc,czestotliwosc;
     private double odleglosc,cena;
     private Czas czasOdlotu;
 
-    Trasa(Lotnisko a, Lotnisko b, int czestotliwosc, Czas czas){
-        poczatek = a;
-        koniec = b;
+    Trasa(Lotnisko poczatek, Lotnisko koniec, int czestotliwosc, Czas czasOdlotu, int iloscMiejsc){
+        this.poczatek = poczatek;
+        this.koniec = koniec;
         this.czestotliwosc = czestotliwosc;
-        czasOdlotu = czas;
-        odleglosc=Math.sqrt(Math.pow(a.getX()-b.getX(),2)+Math.pow(a.getY()-b.getY(),2));
+        this.czasOdlotu = czasOdlotu;
+        this.iloscMiejsc=iloscMiejsc;
+        odleglosc=Math.sqrt(Math.pow(poczatek.getX()-koniec.getX(),2)+Math.pow(poczatek.getY()-koniec.getY(),2));
         cena = odleglosc*2.45;
     }
 
@@ -42,5 +43,12 @@ public class Trasa {
         return koniec;
     }
 
+    public Maszyna getMaszyna(){
+        return przypisanaMaszyna;
+    }
+
+    public int getCzestotliwosc(){
+        return czestotliwosc;
+    }
 
 }

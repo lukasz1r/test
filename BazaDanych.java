@@ -6,6 +6,8 @@ public abstract class BazaDanych {
     public static List<Maszyna> Maszyny = new ArrayList<>();
     public static List<Trasa> Trasy = new ArrayList<>();
     public static List<Rezerwacja> Rezerwacje = new ArrayList<>();
+    public static List<Klient> Klienci = new ArrayList<>();
+    public static List<Posrednik> Posrednicy = new ArrayList<>();
 
     public void getLotniska(){
         int iter = 1;
