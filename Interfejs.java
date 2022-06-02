@@ -13,8 +13,7 @@ public class Interfejs {
         // komenda.baza.getSamoloty();
         Komendy.dodajTrase();
         System.out.println(BazaDanych.Trasy);
-        Klient xd = new Klient(null, null, null);
-        xd.rezerwujLot();
-        System.out.println(BazaDanych.Rezerwacje);
+        Posrednik xd = new Posrednik(null);
+        xd.rezerwujBilety();
     }
 }

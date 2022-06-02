@@ -93,8 +93,8 @@ public abstract class Komendy {
     }
 
     public static void dodajTrase() {
-        String x1,x2;
-        int g,m,czestotliwosc;
+        String poczatek,koniec;
+        int g,m,czestotliwosc,iloscMiejsc;
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj czas odlotu: ");
         System.out.print("godzina: ");
@@ -102,17 +102,19 @@ public abstract class Komendy {
         System.out.print("minuta: ");
         m=scan.nextInt();
         Czas czas = new Czas(g, m);
+        System.out.print("Podaj ilosc miejsc: ");
+        iloscMiejsc = scan.nextInt();
         System.out.println("Wybierz czestotliwosc: \n 1 - codziennie \n 2 - raz w tygodniu \n 3 - co dwa tygodnie");
         czestotliwosc = scan.nextInt();
         System.out.print("Wybierz lotnisko poczatkowe: ");
-        x1 = scan.next();
-        for(Lotnisko z : BazaDanych.Lotniska){
-            if(z.getNazwa().equals(x1)){
+        poczatek = scan.next();
+        for(Lotnisko x1 : BazaDanych.Lotniska){
+            if(x1.getNazwa().equals(poczatek)){
                 System.out.print("Wybierz lotnisko koncowe: ");
-                x2 = scan.next();
-                for(Lotnisko y : BazaDanych.Lotniska){
-                    if(y.getNazwa().equals(x2)){
-                        Trasa trasa = new Trasa(z, y, czestotliwosc, czas);
+                koniec = scan.next();
+                for(Lotnisko x2 : BazaDanych.Lotniska){
+                    if(x2.getNazwa().equals(koniec)){
+                        Trasa trasa = new Trasa(x1, x2, czestotliwosc, czas, iloscMiejsc);
                         BazaDanych.Trasy.add(trasa);
                         }
                     }

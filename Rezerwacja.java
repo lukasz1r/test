@@ -1,6 +1,5 @@
 public class Rezerwacja{
 
-    BazaDanych baza = new BazaDanych();
     private double cena; 
     private Trasa trasa;
     private Czas czas;
