@@ -8,3 +8,5 @@ public class DuzySamolot extends Maszyna{
         super.zasieg=zasieg;
     }
 }
+//chuj
+//sranie na pb
