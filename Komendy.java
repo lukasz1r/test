@@ -133,6 +133,49 @@ public abstract class Komendy {
     } catch (Exception e) {
         System.out.println("Wystapil blad!\nNie stworzono obiektu!");
     }
+    }  
+    public static void usunTrase(){
+        try {
+        Scanner scan = new Scanner(System.in);
+        String poczatek, koniec;
+        int pom=0,i=0;
+        System.out.println("Podaj trase do usuniecia:");
+        System.out.print("Wybierz lotnisko poczatkowe: ");
+        poczatek=scan.next();
+        System.out.print("Wybierz lotnisko koncowe: ");
+        koniec=scan.next();        
+        for(Trasa t1: BazaDanych.Trasy){
+            if(t1.getPoczatek().getNazwa().equals(poczatek)&&t1.getKoniec().getNazwa().equals(koniec)){
+                BazaDanych.Trasy.remove(i);
+                System.out.println("Usunieto trase!");
+                pom=1;
+                break;
+            }
+            i++;
+        }        
+        if(pom!=1) System.out.println("Wystapil blad!\nNie stworzono obiektu!");
+        
+    } catch (Exception e) {
+        System.out.println("Wystapil blad!\nNie stworzono obiektu!");
+    }
     }   
+
+    public static void dodajKlienta() {
+        try {
+        Scanner scan = new Scanner(System.in);
+        String imie,nazwisko,PESEL;
+        System.out.print("Podaj imie: ");
+        imie = scan.next();
+        System.out.println("Podaj nazwisko: ");
+        nazwisko = scan.next();
+        System.out.println("Podaj PESEL");
+        PESEL = scan.next();
+        Klient klient = new Klient(imie, nazwisko, PESEL);
+        BazaDanych.Klienci.add(klient);
+        System.out.println("Dodano klienta!");
+    } catch (Exception e) {
+        System.out.println("Wystapil blad!\nNie stworzono obiektu!");
+    }
+    }
 }
 
