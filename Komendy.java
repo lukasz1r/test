@@ -5,15 +5,15 @@ public abstract class Komendy {
     public static void dodajLotnisko(){
         try {
             Scanner scan = new Scanner(System.in);
-            String nazwaTemp;
-            int xTemp, yTemp;
+            String nazwa;
+            int x, y;
             System.out.print("Podaj nazwe lotniska: ");
-            nazwaTemp = scan.next();
+            nazwa = scan.next();
             System.out.print("Podaj X: ");
-            xTemp = scan.nextInt();
+            x = scan.nextInt();
             System.out.print("Podaj Y: ");
-            yTemp = scan.nextInt();
-            Lotnisko lotnisko = new Lotnisko(nazwaTemp, xTemp, yTemp);
+            y = scan.nextInt();
+            Lotnisko lotnisko = new Lotnisko(nazwa, x, y);
             BazaDanych.Lotniska.add(lotnisko);
             System.out.println("Dodano lotnisko!");
         } catch (Exception e) {
@@ -26,10 +26,10 @@ public abstract class Komendy {
             Scanner scan = new Scanner(System.in);
             int pom = 0, iter = 0;
             System.out.println("Podaj nazwe lotniska do usuniecia: ");
-            String nazwaDoUsuniecia = scan.next();
+            String nazwa = scan.next();
 
             for(Lotnisko i : BazaDanych.Lotniska){
-                if(i.getNazwa().equals(nazwaDoUsuniecia)){
+                if(i.getNazwa().equals(nazwa)){
                     BazaDanych.Lotniska.remove(iter);
                     System.out.println("Usunieto lotnisko: " + i.getNazwa());
                     pom=1;
