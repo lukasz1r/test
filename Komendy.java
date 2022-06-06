@@ -1,9 +1,9 @@
 
+import java.lang.reflect.Executable;
 import java.util.Scanner;
 public abstract class Komendy {
 
-    public static void dodajLotnisko(){
-        try {
+    public static void dodajLotnisko()throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
             int x, y;
@@ -16,13 +16,9 @@ public abstract class Komendy {
             Lotnisko lotnisko = new Lotnisko(nazwa, x, y);
             BazaDanych.Lotniska.add(lotnisko);
             System.out.println("Dodano lotnisko!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano lotniska!");
-        }
     }
 
-    public static void usunLotnisko(){
-        try {
+    public static void usunLotnisko()throws Exception{
             Scanner scan = new Scanner(System.in);
             int pom = 0, iter = 0;
             System.out.println("Podaj nazwe lotniska do usuniecia: ");
@@ -37,14 +33,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto lotniska!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto lotniska!");
-        }
+            if(pom!=1) throw new Exception(); 
     }
 
-    public static void dodajSamolot(){
-        try {
+    public static void dodajSamolot()throws Exception{
             String nazwa;
             int x=5;
             Scanner scan = new Scanner(System.in);
@@ -74,17 +66,12 @@ public abstract class Komendy {
                     System.out.println("Dodano samolot!");    
                         break;
                     default:
-                    System.out.println("Wystapil blad!\nNie dodano samolotu!"); 
-                    break;
+                    throw new Exception(); 
                 }
-        }catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano samolotu!");
-        }
     }
 
   
-    public static void usunSamolot(){
-        try {
+    public static void usunSamolot()throws Exception{
             Scanner scan = new Scanner(System.in);
             int iter = 0,pom = 0;
             System.out.print("Podaj nazwe samolotu do usuniecia: ");
@@ -99,14 +86,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto samolotu!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto samolotu!");
-        }
+            if(pom!=1) throw new Exception(); 
     }
 
-    public static void dodajTrase() { 
-    try {
+    public static void dodajTrase()throws Exception { 
         String poczatek,koniec;
         int g,m,czestotliwosc=0,iloscMiejsc=0, pom=0;
         Czas czas=null;
@@ -138,14 +121,9 @@ public abstract class Komendy {
                     }
                 }
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie dodano trasy!");
-           
-    } catch (Exception e) {
-        System.out.println("Wystapil blad!\nNie dodano trasy!");
-    }
+            if(pom!=1) throw new Exception(); 
     }  
-    public static void usunTrase(){
-        try {
+    public static void usunTrase()throws Exception{
             Scanner scan = new Scanner(System.in);
             String poczatek, koniec;
             int pom=0,i=0;
@@ -163,15 +141,10 @@ public abstract class Komendy {
                 }
                 i++;
             }        
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto trasy!");
-        
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto trasy!");
-        }
+            if(pom!=1) throw new Exception(); 
     }   
 
-    public static void dodajKlienta() {
-        try {
+    public static void dodajKlienta()throws Exception {
         Scanner scan = new Scanner(System.in);
         String imie,nazwisko,PESEL;
         System.out.print("Podaj imie: ");
@@ -183,14 +156,9 @@ public abstract class Komendy {
         Klient klient = new Klient(imie, nazwisko, PESEL);
         BazaDanych.Klienci.add(klient);
         System.out.println("Dodano klienta!");
-    } catch (Exception e) {
-        System.out.println("Wystapil blad!\nNie dodano klienta!");
-    }
     }
 
-    public static void usunKlienta(){
-        try {
-            
+    public static void usunKlienta()throws Exception{
             Scanner scan = new Scanner(System.in);
             String imie, nazwisko, PESEL;
             int pom = 0, iter = 0;
@@ -211,14 +179,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if (pom!=1) System.out.println("Wystapil blad!\nNie usunieto klienta!"); 
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto klienta!");
-        }
+            if (pom!=1) throw new Exception(); 
     }
 
-    public static void dodajPosrednika(){
-        try {
+    public static void dodajPosrednika()throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
             System.out.print("Podaj nazwe firmy: ");
@@ -226,13 +190,9 @@ public abstract class Komendy {
             Posrednik posrednik = new Posrednik(nazwa);
             BazaDanych.Posrednicy.add(posrednik);
             System.out.println("Dodano pośrednika!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        }
     }
 
-    public static void usunPosrednika(){
-        try {
+    public static void usunPosrednika()throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
             int iter = 0, pom = 0;
@@ -248,10 +208,7 @@ public abstract class Komendy {
                 }
                 iter++;
             }    
-            if(pom!=1) System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        }
+            if(pom!=1) throw new Exception(); 
     }
 
     public static Pomoc wybierzUzytkownika() throws Exception{
