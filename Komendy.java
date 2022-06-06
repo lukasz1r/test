@@ -1,9 +1,7 @@
-
-import java.lang.reflect.Executable;
 import java.util.Scanner;
 public abstract class Komendy {
 
-    public static void dodajLotnisko()throws Exception{
+    public static void dodajLotnisko() throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
             int x, y;
@@ -229,7 +227,7 @@ public abstract class Komendy {
                     }
                     else{
                         System.out.println("Bledne haslo!");
-                        return new Pomoc (0,0);
+                        throw new Exception();
                     } 
                 case 2:
                     String imie, nazwisko, PESEL;
@@ -249,7 +247,7 @@ public abstract class Komendy {
                         iter++;
                     }
                     System.out.println("Brak takiego klienta w bazie danych!");
-                    return new Pomoc(0, 0);
+                    throw new Exception();
                     
                 case 3:
                     String nazwa;
@@ -264,10 +262,9 @@ public abstract class Komendy {
                         }
                     }
                     System.out.println("Brak takiej firmy w bazie danych!");
-                    return new Pomoc(0, 0);
+                    throw new Exception();
                 default:
-                    System.out.println("Blad!");
-                    return new Pomoc(0, 0);
+                    throw new Exception();
             }
             
     }
