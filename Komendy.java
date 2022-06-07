@@ -1,35 +1,29 @@
-
 import java.util.Scanner;
 public abstract class Komendy {
 
-    public static void dodajLotnisko(){
-        try {
+    public static void dodajLotnisko() throws Exception{
             Scanner scan = new Scanner(System.in);
-            String nazwaTemp;
-            int xTemp, yTemp;
+            String nazwa;
+            int x, y;
             System.out.print("Podaj nazwe lotniska: ");
-            nazwaTemp = scan.next();
+            nazwa = scan.next();
             System.out.print("Podaj X: ");
-            xTemp = scan.nextInt();
+            x = scan.nextInt();
             System.out.print("Podaj Y: ");
-            yTemp = scan.nextInt();
-            Lotnisko lotnisko = new Lotnisko(nazwaTemp, xTemp, yTemp);
+            y = scan.nextInt();
+            Lotnisko lotnisko = new Lotnisko(nazwa, x, y);
             BazaDanych.Lotniska.add(lotnisko);
             System.out.println("Dodano lotnisko!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano lotniska!");
-        }
     }
 
-    public static void usunLotnisko(){
-        try {
+    public static void usunLotnisko()throws Exception{
             Scanner scan = new Scanner(System.in);
             int pom = 0, iter = 0;
             System.out.println("Podaj nazwe lotniska do usuniecia: ");
-            String nazwaDoUsuniecia = scan.next();
+            String nazwa = scan.next();
 
             for(Lotnisko i : BazaDanych.Lotniska){
-                if(i.getNazwa().equals(nazwaDoUsuniecia)){
+                if(i.getNazwa().equals(nazwa)){
                     BazaDanych.Lotniska.remove(iter);
                     System.out.println("Usunieto lotnisko: " + i.getNazwa());
                     pom=1;
@@ -37,14 +31,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto lotniska!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto lotniska!");
-        }
+            if(pom!=1) throw new Exception("Brak lotniska w bazie danych!"); 
     }
 
-    public static void dodajSamolot(){
-        try {
+    public static void dodajSamolot()throws Exception{
             String nazwa;
             int x=5;
             Scanner scan = new Scanner(System.in);
@@ -74,17 +64,12 @@ public abstract class Komendy {
                     System.out.println("Dodano samolot!");    
                         break;
                     default:
-                    System.out.println("Wystapil blad!\nNie dodano samolotu!"); 
-                    break;
+                    throw new Exception("Nieprawidlowa liczba!"); 
                 }
-        }catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano samolotu!");
-        }
     }
 
   
-    public static void usunSamolot(){
-        try {
+    public static void usunSamolot()throws Exception{
             Scanner scan = new Scanner(System.in);
             int iter = 0,pom = 0;
             System.out.print("Podaj nazwe samolotu do usuniecia: ");
@@ -99,14 +84,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto samolotu!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto samolotu!");
-        }
+            if(pom!=1) throw new Exception("Brak samolotu w bazie danych!"); 
     }
 
-    public static void dodajTrase() { 
-    try {
+    public static void dodajTrase()throws Exception { 
         String poczatek,koniec;
         int g,m,czestotliwosc=0,iloscMiejsc=0, pom=0;
         Czas czas=null;
@@ -129,23 +110,22 @@ public abstract class Komendy {
                 koniec = scan.next();
                 for(Lotnisko x2 : BazaDanych.Lotniska){
                     if(x2.getNazwa().equals(koniec)){
-                        Trasa trasa = new Trasa(x1, x2, czestotliwosc, czas, iloscMiejsc);
-                        BazaDanych.Trasy.add(trasa);
-                        System.out.println("Dodano trase!");
-                        pom=1;
-                        break;
+                        for(Maszyna i : BazaDanych.Maszyny){
+                            if(i.iloscMiejsc>iloscMiejsc){
+                                Trasa trasa = new Trasa(x1, x2, czestotliwosc, czas, iloscMiejsc,i);
+                                BazaDanych.Trasy.add(trasa);
+                                System.out.println("Dodano trase!");
+                                pom=1;
+                                break;
+                                }
+                            }
                         }
                     }
                 }
             }
-            if(pom!=1) System.out.println("Wystapil blad!\nNie dodano trasy!");
-           
-    } catch (Exception e) {
-        System.out.println("Wystapil blad!\nNie dodano trasy!");
-    }
+            if(pom!=1) throw new Exception("Nieodpowiednie dane!"); 
     }  
-    public static void usunTrase(){
-        try {
+    public static void usunTrase()throws Exception{
             Scanner scan = new Scanner(System.in);
             String poczatek, koniec;
             int pom=0,i=0;
@@ -163,34 +143,24 @@ public abstract class Komendy {
                 }
                 i++;
             }        
-            if(pom!=1) System.out.println("Wystapil blad!\nNie usunieto trasy!");
-        
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto trasy!");
-        }
+            if(pom!=1) throw new Exception("Brak trasy w bazie danych!"); 
     }   
 
-    public static void dodajKlienta() {
-        try {
+    public static void dodajKlienta(){
         Scanner scan = new Scanner(System.in);
         String imie,nazwisko,PESEL;
         System.out.print("Podaj imie: ");
         imie = scan.next();
-        System.out.println("Podaj nazwisko: ");
+        System.out.print("Podaj nazwisko: ");
         nazwisko = scan.next();
-        System.out.println("Podaj PESEL");
+        System.out.print("Podaj PESEL: ");
         PESEL = scan.next();
         Klient klient = new Klient(imie, nazwisko, PESEL);
         BazaDanych.Klienci.add(klient);
         System.out.println("Dodano klienta!");
-    } catch (Exception e) {
-        System.out.println("Wystapil blad!\nNie dodano klienta!");
-    }
     }
 
-    public static void usunKlienta(){
-        try {
-            
+    public static void usunKlienta()throws Exception{
             Scanner scan = new Scanner(System.in);
             String imie, nazwisko, PESEL;
             int pom = 0, iter = 0;
@@ -211,14 +181,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if (pom!=1) System.out.println("Wystapil blad!\nNie usunieto klienta!"); 
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie usunieto klienta!");
-        }
+            if (pom!=1) throw new Exception("Brak klienta w bazie danych");; 
     }
 
     public static void dodajPosrednika(){
-        try {
             Scanner scan = new Scanner(System.in);
             String nazwa;
             System.out.print("Podaj nazwe firmy: ");
@@ -226,13 +192,9 @@ public abstract class Komendy {
             Posrednik posrednik = new Posrednik(nazwa);
             BazaDanych.Posrednicy.add(posrednik);
             System.out.println("Dodano pośrednika!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        }
     }
 
-    public static void usunPosrednika(){
-        try {
+    public static void usunPosrednika()throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
             int iter = 0, pom = 0;
@@ -248,10 +210,7 @@ public abstract class Komendy {
                 }
                 iter++;
             }    
-            if(pom!=1) System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        } catch (Exception e) {
-            System.out.println("Wystapil blad!\nNie dodano posrednika!");
-        }
+            if(pom!=1) throw new Exception("Brak firmy w bazie danych!"); 
     }
 
     public static Pomoc wybierzUzytkownika() throws Exception{
@@ -264,15 +223,14 @@ public abstract class Komendy {
             x = scan.nextInt();
             switch (x) {
                 case 1:
-                    System.out.println("Podaj haslo: ");
+                    System.out.print("Podaj haslo: ");
                     int haslo = scan.nextInt();
                     if(haslo == 123){
                         System.out.println("Wybrano admina!");
                         return new Pomoc(1,0);
                     }
                     else{
-                        System.out.println("Bledne haslo!");
-                        return new Pomoc (0,0);
+                        throw new Exception("Bledne haslo!");
                     } 
                 case 2:
                     String imie, nazwisko, PESEL;
@@ -280,9 +238,9 @@ public abstract class Komendy {
                     System.out.println("Podaj swoje dane:");
                     System.out.print("Podaj imie: ");
                     imie = scan.next();
-                    System.out.println("Podaj nazwisko: ");
+                    System.out.print("Podaj nazwisko: ");
                     nazwisko = scan.next();
-                    System.out.println("Podaj PESEL: ");
+                    System.out.print("Podaj PESEL: ");
                     PESEL = scan.next();
                     for(Klient i : BazaDanych.Klienci){
                         if(i.getImie().equals(imie)&&i.getNazwisko().equals(nazwisko)&&i.getPESEL().equals(PESEL)){
@@ -291,8 +249,7 @@ public abstract class Komendy {
                         }
                         iter++;
                     }
-                    System.out.println("Brak takiego klienta w bazie danych!");
-                    return new Pomoc(0, 0);
+                    throw new Exception("Brak takiego klienta w bazie danych!");
                     
                 case 3:
                     String nazwa;
@@ -306,11 +263,9 @@ public abstract class Komendy {
                             return new Pomoc(3, iter);
                         }
                     }
-                    System.out.println("Brak takiej firmy w bazie danych!");
-                    return new Pomoc(0, 0);
+                    throw new Exception("Brak takiej firmy w bazie danych!");
                 default:
-                    System.out.println("Blad!");
-                    return new Pomoc(0, 0);
+                    throw new Exception("Nieprawidlowa liczba!");
             }
             
     }
