@@ -1,4 +1,4 @@
-public class Trasa {
+public class Trasa{
     
     private Lotnisko poczatek, koniec;
     private Maszyna przypisanaMaszyna;
@@ -6,7 +6,8 @@ public class Trasa {
     private double odleglosc,cena;
     private Czas czasOdlotu;
 
-    Trasa(Lotnisko poczatek, Lotnisko koniec, int czestotliwosc, Czas czasOdlotu, int iloscMiejsc){
+    Trasa(Lotnisko poczatek, Lotnisko koniec, int czestotliwosc, Czas czasOdlotu, int iloscMiejsc, Maszyna przypisanaMaszyna){
+        this.przypisanaMaszyna=przypisanaMaszyna;
         this.poczatek = poczatek;
         this.koniec = koniec;
         this.czestotliwosc = czestotliwosc;

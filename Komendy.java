@@ -31,7 +31,7 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) throw new Exception(); 
+            if(pom!=1) throw new Exception("Brak lotniska w bazie danych!"); 
     }
 
     public static void dodajSamolot()throws Exception{
@@ -64,7 +64,7 @@ public abstract class Komendy {
                     System.out.println("Dodano samolot!");    
                         break;
                     default:
-                    throw new Exception(); 
+                    throw new Exception("Nieprawidlowa liczba!"); 
                 }
     }
 
@@ -84,7 +84,7 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if(pom!=1) throw new Exception(); 
+            if(pom!=1) throw new Exception("Brak samolotu w bazie danych!"); 
     }
 
     public static void dodajTrase()throws Exception { 
@@ -110,16 +110,20 @@ public abstract class Komendy {
                 koniec = scan.next();
                 for(Lotnisko x2 : BazaDanych.Lotniska){
                     if(x2.getNazwa().equals(koniec)){
-                        Trasa trasa = new Trasa(x1, x2, czestotliwosc, czas, iloscMiejsc);
-                        BazaDanych.Trasy.add(trasa);
-                        System.out.println("Dodano trase!");
-                        pom=1;
-                        break;
+                        for(Maszyna i : BazaDanych.Maszyny){
+                            if(i.iloscMiejsc>iloscMiejsc){
+                                Trasa trasa = new Trasa(x1, x2, czestotliwosc, czas, iloscMiejsc,i);
+                                BazaDanych.Trasy.add(trasa);
+                                System.out.println("Dodano trase!");
+                                pom=1;
+                                break;
+                                }
+                            }
                         }
                     }
                 }
             }
-            if(pom!=1) throw new Exception(); 
+            if(pom!=1) throw new Exception("Nieodpowiednie dane!"); 
     }  
     public static void usunTrase()throws Exception{
             Scanner scan = new Scanner(System.in);
@@ -139,17 +143,17 @@ public abstract class Komendy {
                 }
                 i++;
             }        
-            if(pom!=1) throw new Exception(); 
+            if(pom!=1) throw new Exception("Brak trasy w bazie danych!"); 
     }   
 
-    public static void dodajKlienta()throws Exception {
+    public static void dodajKlienta(){
         Scanner scan = new Scanner(System.in);
         String imie,nazwisko,PESEL;
         System.out.print("Podaj imie: ");
         imie = scan.next();
-        System.out.println("Podaj nazwisko: ");
+        System.out.print("Podaj nazwisko: ");
         nazwisko = scan.next();
-        System.out.println("Podaj PESEL");
+        System.out.print("Podaj PESEL: ");
         PESEL = scan.next();
         Klient klient = new Klient(imie, nazwisko, PESEL);
         BazaDanych.Klienci.add(klient);
@@ -177,10 +181,10 @@ public abstract class Komendy {
                 }
                 iter++;
             }
-            if (pom!=1) throw new Exception(); 
+            if (pom!=1) throw new Exception("Brak klienta w bazie danych");; 
     }
 
-    public static void dodajPosrednika()throws Exception{
+    public static void dodajPosrednika(){
             Scanner scan = new Scanner(System.in);
             String nazwa;
             System.out.print("Podaj nazwe firmy: ");
@@ -206,7 +210,7 @@ public abstract class Komendy {
                 }
                 iter++;
             }    
-            if(pom!=1) throw new Exception(); 
+            if(pom!=1) throw new Exception("Brak firmy w bazie danych!"); 
     }
 
     public static Pomoc wybierzUzytkownika() throws Exception{
@@ -219,15 +223,14 @@ public abstract class Komendy {
             x = scan.nextInt();
             switch (x) {
                 case 1:
-                    System.out.println("Podaj haslo: ");
+                    System.out.print("Podaj haslo: ");
                     int haslo = scan.nextInt();
                     if(haslo == 123){
                         System.out.println("Wybrano admina!");
                         return new Pomoc(1,0);
                     }
                     else{
-                        System.out.println("Bledne haslo!");
-                        throw new Exception();
+                        throw new Exception("Bledne haslo!");
                     } 
                 case 2:
                     String imie, nazwisko, PESEL;
@@ -235,9 +238,9 @@ public abstract class Komendy {
                     System.out.println("Podaj swoje dane:");
                     System.out.print("Podaj imie: ");
                     imie = scan.next();
-                    System.out.println("Podaj nazwisko: ");
+                    System.out.print("Podaj nazwisko: ");
                     nazwisko = scan.next();
-                    System.out.println("Podaj PESEL: ");
+                    System.out.print("Podaj PESEL: ");
                     PESEL = scan.next();
                     for(Klient i : BazaDanych.Klienci){
                         if(i.getImie().equals(imie)&&i.getNazwisko().equals(nazwisko)&&i.getPESEL().equals(PESEL)){
@@ -246,8 +249,7 @@ public abstract class Komendy {
                         }
                         iter++;
                     }
-                    System.out.println("Brak takiego klienta w bazie danych!");
-                    throw new Exception();
+                    throw new Exception("Brak takiego klienta w bazie danych!");
                     
                 case 3:
                     String nazwa;
@@ -261,10 +263,9 @@ public abstract class Komendy {
                             return new Pomoc(3, iter);
                         }
                     }
-                    System.out.println("Brak takiej firmy w bazie danych!");
-                    throw new Exception();
+                    throw new Exception("Brak takiej firmy w bazie danych!");
                 default:
-                    throw new Exception();
+                    throw new Exception("Nieprawidlowa liczba!");
             }
             
     }

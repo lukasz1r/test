@@ -11,9 +11,9 @@ public class Posrednik {
         this.nazwa = nazwa;
     }
 
-    public void rezerwujBilety(){
+    public void rezerwujBilety()throws Exception{
         String poczatek,koniec;
-        int bilety;
+        int bilety,pom=0;
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj liczbe biletow do kupienia: ");
         bilety=scan.nextInt();
@@ -37,6 +37,7 @@ public class Posrednik {
                 }
             }
         }
+        if(pom!=0) throw new Exception();
     }
     public String getNazwa() {
         return nazwa;

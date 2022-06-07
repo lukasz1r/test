@@ -14,8 +14,9 @@ public class Klient {
         this.PESEL = PESEL;
     }
 
-    public void rezerwujLot(){
+    public void rezerwujLot() throws Exception{
         String x1,x2;
+        int pom=0;
         Scanner scan = new Scanner(System.in);
         System.out.print("Wybierz lotnisko poczatkowe: ");
         x1 = scan.next();
@@ -31,12 +32,14 @@ public class Klient {
                                 BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
                                 i.zakup();
+                                pom=1;
                             }
                         }
                     }
                 }
             }
         }
+        if(pom!=0) throw new Exception();
     }
     public String getImie() {
         return imie;

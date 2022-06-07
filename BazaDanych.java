@@ -9,7 +9,7 @@ public abstract class BazaDanych {
     public static List<Klient> Klienci = new ArrayList<>();
     public static List<Posrednik> Posrednicy = new ArrayList<>();
 
-    public void getLotniska(){
+    public static void getLotniska(){
         int iter = 1;
         System.out.println("Lista lotnisk: ");
         for(Lotnisko i : Lotniska){
@@ -18,7 +18,7 @@ public abstract class BazaDanych {
         }
     }
 
-    public void getSamoloty(){
+    public static void getSamoloty(){
         int iter = 1;
         System.out.println("Lista samolotow: ");
         for(Maszyna i : Maszyny){
