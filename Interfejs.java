@@ -12,7 +12,10 @@ public class Interfejs {
                 System.out.println("\nKontrola lotow!\n");
                 pom = Komendy.wybierzUzytkownika();
             } catch (Exception e) {
-                System.out.println("\n"+e.getMessage()+" Sprobuj ponownie!");
+                if(e.getMessage()==null){
+                    System.out.println("\nNieprawidlowa liczba! Sprobuj ponownie!\n");
+                }
+                else System.out.println("\n"+e.getMessage()+" Sprobuj ponownie!\n");
             }
                 if(pom.getX()==1){
                     pom=new Pomoc(0, 0);
