@@ -267,8 +267,13 @@ public abstract class Komendy {
                 default:
                     throw new Exception("Nieprawidlowa liczba!");
             }
-            
+        }
+    public static void zapis() {
+    //adam chuju zrob to
     }
-
+    public static void wczytywanie() {
+    //adam chuju zrob to
+    }
 }
+
 
