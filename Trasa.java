@@ -48,8 +48,15 @@ public class Trasa{
         return przypisanaMaszyna;
     }
 
-    public int getCzestotliwosc(){
+    public int getIntCzestotliwosc(){
         return czestotliwosc;
+    }
+
+    public String getCzestotliwosc(){
+        if(czestotliwosc==1) return "Codziennie";
+        else if(czestotliwosc==2) return "Raz w tygodniu";
+        else if(czestotliwosc==3) return "Co dwa tygodnie";
+        return "";
     }
 
 }
