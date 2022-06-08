@@ -230,11 +230,11 @@ public abstract class Komendy {
                     System.out.print("Podaj haslo: ");
                     int haslo = scan.nextInt();
                     if(haslo == 123){
-                        System.out.println("Wybrano admina!");
+                        System.out.println("\nWybrano admina!");
                         return new Pomoc(1,0);
                     }
                     else{
-                        throw new Exception("Bledne haslo!");
+                        throw new Exception("\nBledne haslo!");
                     } 
                 case 2:
                     String imie, nazwisko, PESEL;
@@ -248,12 +248,12 @@ public abstract class Komendy {
                     PESEL = scan.next();
                     for(Klient i : BazaDanych.Klienci){
                         if(i.getImie().equals(imie)&&i.getNazwisko().equals(nazwisko)&&i.getPESEL().equals(PESEL)){
-                            System.out.println("Witaj "+i.getImie());
+                            System.out.println("\nWitaj "+i.getImie());
                             return new Pomoc(2, iter);
                         }
                         iter++;
                     }
-                    throw new Exception("Brak takiego klienta w bazie danych!");
+                    throw new Exception("\nBrak takiego klienta w bazie danych!");
                     
                 case 3:
                     String nazwa;
@@ -263,13 +263,13 @@ public abstract class Komendy {
                     nazwa = scan.next();
                     for(Posrednik i : BazaDanych.Posrednicy){
                         if(i.getNazwa().equals(nazwa)){
-                            System.out.println("Witaj "+ i.getNazwa());
+                            System.out.println("\nWitaj "+ i.getNazwa());
                             return new Pomoc(3, iter);
                         }
                     }
-                    throw new Exception("Brak takiej firmy w bazie danych!");
+                    throw new Exception("\nBrak takiej firmy w bazie danych!");
                 default:
-                    throw new Exception("Nieprawidlowa liczba!");
+                    throw new Exception("\nNieprawidlowa liczba!");
             }
         }
     public static void zapis() throws FileNotFoundException {
