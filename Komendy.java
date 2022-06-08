@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 public abstract class Komendy {
 
@@ -102,6 +105,7 @@ public abstract class Komendy {
         iloscMiejsc = scan.nextInt();
         System.out.println("Wybierz czestotliwosc: \n 1 - codziennie \n 2 - raz w tygodniu \n 3 - co dwa tygodnie");
         czestotliwosc = scan.nextInt();
+        if(czestotliwosc!=1&&czestotliwosc!=2&&czestotliwosc!=3) throw new Exception("Nieprawidlowa liczba!");
         System.out.print("Wybierz lotnisko poczatkowe: ");
         poczatek = scan.next();
         for(Lotnisko x1 : BazaDanych.Lotniska){
@@ -268,12 +272,121 @@ public abstract class Komendy {
                     throw new Exception("Nieprawidlowa liczba!");
             }
         }
-    public static void zapis() {
-    //adam chuju zrob to
+    public static void zapis() throws FileNotFoundException {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj nazwe pliku do zapisu: ");
+        String nazwa = scan.next();
+        PrintWriter zapis = new PrintWriter(nazwa+".txt");
+        for(Maszyna i : BazaDanych.Maszyny){
+            zapis.print(i.nazwa+" ");
+            zapis.print(i.getClass()+"\n");
+        }
+        zapis.println("-");
+        for(Lotnisko i : BazaDanych.Lotniska){
+            zapis.print(i.getNazwa()+" ");
+            zapis.print(i.getX()+" ");
+            zapis.print(i.getY()+"\n");
+        }
+        zapis.println("-");
+        for(Trasa i : BazaDanych.Trasy){
+            zapis.print(i.getPoczatek().getNazwa()+" ");
+            zapis.print(i.getKoniec().getNazwa()+" ");
+            zapis.print(i.getIntCzestotliwosc()+" ");
+            zapis.print(i.getCzas().getGodzina()+" ");
+            zapis.print(i.getCzas().getMinuta()+" ");
+            zapis.print(i.getIloscMiejsc()+" ");
+            zapis.print(i.getMaszyna().getNazwa()+"\n");
+        }
+        zapis.println("-");
+        for(Klient i : BazaDanych.Klienci){
+            zapis.print(i.getImie()+" ");
+            zapis.print(i.getNazwisko()+" ");
+            zapis.print(i.getPESEL()+"\n");
+        }
+        zapis.println("-");
+        for(Posrednik i : BazaDanych.Posrednicy){
+            zapis.print(i.getNazwa()+"\n");
+        }
+        zapis.println("-");
+        zapis.close();
     }
-    public static void wczytywanie() {
-    //adam chuju zrob to
+    public static void wczytywanie() throws FileNotFoundException {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Podaj nazwe pliku do odczytu: ");
+        String nazwaPliku = scan.next();
+        Scanner plik = new Scanner(new File(nazwaPliku+".txt"));
+        while(true){
+            String nazwa = plik.next();
+            if(nazwa.equals("-")) break;
+            plik.next();
+            String rozmiar = plik.next();
+            if(rozmiar.equals("MalySamolot")){
+                MalySamolot samolot = new MalySamolot(nazwa);
+                BazaDanych.Maszyny.add(samolot);
+            }
+            else if(rozmiar.equals("SredniSamolot")){
+                SredniSamolot samolot = new SredniSamolot(nazwa);
+                BazaDanych.Maszyny.add(samolot);
+            }
+            else if(rozmiar.equals("DuzySamolot")){
+                DuzySamolot samolot = new DuzySamolot(nazwa);
+                BazaDanych.Maszyny.add(samolot);
+            }
+            else if(rozmiar.equals("WielkiSamolot")){
+                WielkiSamolot samolot = new WielkiSamolot(nazwa);
+                BazaDanych.Maszyny.add(samolot);
+            }
+        }
+        while (true) {
+            String nazwa = plik.next();
+            if(nazwa.equals("-")) break;
+            int x = plik.nextInt();
+            int y = plik.nextInt();
+            Lotnisko lotnisko = new Lotnisko(nazwa, x, y);
+            BazaDanych.Lotniska.add(lotnisko);
+        }
+        while (true) {
+            String poczatek = plik.next();
+            if(poczatek.equals("-")) break;
+            String koniec = plik.next();
+            int czestotliwosc = plik.nextInt();
+            int godzina = plik.nextInt();
+            int minuta = plik.nextInt();
+            int iloscMiejsc = plik.nextInt();
+            String maszyna = plik.next();
+            
+            Lotnisko lPoczatek=null ,lKoniec=null;
+            for(Lotnisko i : BazaDanych.Lotniska){
+                if(i.getNazwa().equals(poczatek)) lPoczatek=i;
+                else if(i.getNazwa().equals(koniec)) lKoniec=i;
+            }
+
+            Maszyna przypisanaMaszyna = null;
+            for(Maszyna i : BazaDanych.Maszyny){
+                if(i.getNazwa().equals(maszyna)) przypisanaMaszyna = i;
+            }
+
+            Trasa trasa = new Trasa(lPoczatek, lKoniec, czestotliwosc, new Czas(godzina, minuta), iloscMiejsc, przypisanaMaszyna);
+            BazaDanych.Trasy.add(trasa);
+        }   
+        while (true) { 
+            String imie = plik.next();
+            if(imie.equals("-")) break;
+            String nazwisko = plik.next();
+            String PESEL = plik.next();
+
+            Klient klient = new Klient(imie, nazwisko, PESEL);
+            BazaDanych.Klienci.add(klient);
+        }
+        while(true){
+            String nazwa = plik.next();
+            if(nazwa.equals("-")) break;
+
+            Posrednik posrednik = new Posrednik(nazwa);
+            BazaDanych.Posrednicy.add(posrednik);
+        }
     }
 }
+
 
 

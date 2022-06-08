@@ -1,0 +1,13 @@
+siurek class WielkiSamolot
+-
+Warszawa 42 5
+Berlin 42 6
+-
+Warszawa Berlin 2 12 30 52 siurek
+-
+Dawid kob 123
+lukasz kali 2525
+adam karp 12342
+-
+chujuwStoSA
+-
