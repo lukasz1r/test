@@ -27,7 +27,7 @@ public class Klient {
                 for(Lotnisko y : BazaDanych.Lotniska){
                     if(y.getNazwa().equals(x2)){
                         for(Trasa i : BazaDanych.Trasy){
-                            if(z.getNazwa().equals(i.getPoczatek().getNazwa())&&y.getNazwa().equals(i.getKoniec().getNazwa())){
+                            if(i.getPoczatek().getNazwa().equals(x1)&&i.getKoniec().getNazwa().equals(x2)){
                                 Rezerwacja lot = new Rezerwacja(i);
                                 BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
@@ -39,7 +39,7 @@ public class Klient {
                 }
             }
         }
-        if(pom!=0) throw new Exception();
+        if(pom==0) throw new Exception();
     }
     public String getImie() {
         return imie;

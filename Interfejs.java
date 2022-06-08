@@ -159,6 +159,7 @@ public class Interfejs {
                     while(petla2==0){
                         try{
                             int x;
+                            System.out.println("\nWybierz operacje: ");
                             System.out.println("1. Rezerwuj");
                             System.out.println("2. Sprawdz swoje loty");
                             System.out.println("3. Sprawdz dostepne trasy");
@@ -206,6 +207,7 @@ public class Interfejs {
                     while(petla2==0){
                         try{
                             int x;
+                            System.out.println("\nWybierz operacje:");
                             System.out.println("1. Rezerwuj");
                             System.out.println("2. Sprawdz swoje loty");
                             System.out.println("3. Sprawdz dostepne trasy");
