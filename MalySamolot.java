@@ -8,6 +8,4 @@ public class MalySamolot extends Maszyna{
         super.nazwa=nazwa;
         super.zasieg=zasieg;
     }
-
-
 }

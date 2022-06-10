@@ -8,3 +8,4 @@ public class SredniSamolot extends Maszyna{
         super.zasieg=zasieg;
     }
 }
+    

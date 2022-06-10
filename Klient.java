@@ -29,6 +29,7 @@ public class Klient {
                         for(Trasa i : BazaDanych.Trasy){
                             if(i.getPoczatek().getNazwa().equals(x1)&&i.getKoniec().getNazwa().equals(x2)){
                                 Rezerwacja lot = new Rezerwacja(i);
+                                System.out.println("Zarezerwowano lot do: "+i.getKoniec().getNazwa()+"!");
                                 BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
                                 i.zakup();
@@ -51,3 +52,4 @@ public class Klient {
         return PESEL;
     }
 }
+    

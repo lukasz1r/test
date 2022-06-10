@@ -8,3 +8,4 @@ public class WielkiSamolot extends Maszyna{
         super.zasieg=zasieg;
     }
 }
+    

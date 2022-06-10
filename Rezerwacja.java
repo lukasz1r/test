@@ -19,4 +19,4 @@ public class Rezerwacja{
     public String toString() {
         return trasa + " | " + cena + " | " + czas;
     }
-}
+}   

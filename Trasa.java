@@ -59,4 +59,8 @@ public class Trasa{
         return "";
     }
 
+    public String toString(){
+        return poczatek.getNazwa()+" -> "+koniec.getNazwa();
+    }
 }
+    
