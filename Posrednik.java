@@ -28,6 +28,7 @@ public class Posrednik {
                         for(Trasa t : BazaDanych.Trasy){
                             if(t.getPoczatek().getNazwa().equals(poczatek)&&t.getKoniec().getNazwa().equals(koniec)){
                                 Rezerwacja lot = new Rezerwacja(t);
+                                System.out.println("Kupiono bilet/y do: "+t.getKoniec().getNazwa()+" x"+bilety+"!");
                                 BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
                                 for(int h = 0; h<bilety;h++) t.zakup();
@@ -46,3 +47,4 @@ public class Posrednik {
 
 
 
+    

@@ -1,3 +1,4 @@
+import java.net.SocketImpl;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,7 +17,12 @@ public class Interfejs {
                 }
                 else System.out.println("\n"+e.getMessage()+" Sprobuj ponownie!\n");
             }
-                if(pom.getX()==1){
+                if(pom.getX()==4){
+                    System.out.println("\nZakonczono program!");
+                    petla1=0;
+                    break;
+                }
+                else if(pom.getX()==1){
                     pom=new Pomoc(0, 0);
                     int petla2=0;
                     while(petla2==0){
@@ -134,6 +140,7 @@ public class Interfejs {
                                         case 0:
                                             petla1 = 1;
                                             petla2 = 1;
+                                            System.out.println("\nZakonczono program!");
                                             break;
                                         default:
                                             System.out.println("\nNieprawidlowa liczba! Sprobuj ponownie!\n");
@@ -183,6 +190,7 @@ public class Interfejs {
                                     case 0:
                                         petla1=1;
                                         petla2=1;
+                                        System.out.println("\nZakonczono program!");
                                         break;
                                     default:
                                         System.out.println("\nNieprawidlowa liczba! Sprobuj ponownie!\n");
@@ -231,6 +239,7 @@ public class Interfejs {
                                     case 0:
                                         petla1=1;
                                         petla2=1;
+                                        System.out.println("\nZakonczono program!");
                                         break;
                                     default:
                                         System.out.println("\nNieprawidlowa liczba! Sprobuj ponownie!\n");
@@ -250,4 +259,4 @@ public class Interfejs {
                 }
         }
     }   
-}   
+}       

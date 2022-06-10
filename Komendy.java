@@ -224,6 +224,7 @@ public abstract class Komendy {
             System.out.println("1. Admin");
             System.out.println("2. Klient");
             System.out.println("3. Posrednik");
+            System.out.println("\n0. Zakoncz program!");
             x = scan.nextInt();
             switch (x) {
                 case 1:
@@ -268,6 +269,8 @@ public abstract class Komendy {
                         }
                     }
                     throw new Exception("\nBrak takiej firmy w bazie danych!");
+                case 0:
+                    return new Pomoc(4, 0);
                 default:
                     throw new Exception("\nNieprawidlowa liczba!");
             }
@@ -390,3 +393,4 @@ public abstract class Komendy {
 
 
 
+    

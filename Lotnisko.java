@@ -26,3 +26,4 @@ public class Lotnisko{
         return nazwa + " | " + x + " | " + y ;
     }
 }
+    
