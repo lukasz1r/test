@@ -38,7 +38,7 @@ public class Posrednik {
                 }
             }
         }
-        if(pom==0) throw new Exception();
+        if(pom==0) throw new Exception("Wybrano nieprawidłową trasę!");
     }
     public String getNazwa() {
         return nazwa;
