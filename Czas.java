@@ -12,4 +12,8 @@ public class Czas {
     public int getMinuta() {
         return minuta;
     }
-}
+
+    public String toString(){
+        return godzina+":"+minuta;
+    }
+}   
