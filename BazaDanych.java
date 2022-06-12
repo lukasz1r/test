@@ -1,6 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * <h3>Klasa BazaDanych</h3>
+ * <p>Przechowuje wszelkie obiekty zawarte w programie w formie ArrayList.</p>
+ * <ul>
+ *      <li><b>Lotniska</b> - baza lotnisk</li>
+ *      <li><b>Maszyny</b> - baza maszyn</li>
+ *      <li><b>Trasy</b> - baza tras</li>
+ *      <li><b>Rezerwacje</b> - baza rezerwacji</li>
+ *      <li><b>Klienci</b> - baza klientów</li>
+ *      <li><b>Pośrednicy</b> - baza pośredników</li>
+ * </ul> 
+ */
+
 public abstract class BazaDanych {
     public static List<Lotnisko> Lotniska = new ArrayList<>();
     public static List<Maszyna> Maszyny = new ArrayList<>();
@@ -9,6 +22,7 @@ public abstract class BazaDanych {
     public static List<Klient> Klienci = new ArrayList<>();
     public static List<Posrednik> Posrednicy = new ArrayList<>();
 
+    //Metoda getLotniska wypisuje lotniska z bazy danych
     public static void getLotniska(){
         int iter = 1;
         System.out.println("Lista lotnisk: ");
@@ -18,6 +32,7 @@ public abstract class BazaDanych {
         }
     }
 
+    //Metoda getSamoloty wypisuje Samoloty z bazy danych
     public static void getSamoloty(){
         int iter = 1;
         System.out.println("Lista samolotow: ");
@@ -27,6 +42,7 @@ public abstract class BazaDanych {
         }
     }
 
+    //Metoda getTrasy wypisuje Trasy z bazy danych
     public static void getTrasy(){
         int iter=1;
         System.out.println("Lista tras: ");
@@ -37,6 +53,7 @@ public abstract class BazaDanych {
         }   
     }
 
+    //Metoda getRezerwacje wypisuje Rezerwacje z bazy danych
     public static void getRezerwacje() {
         int iter=1;
         System.out.println("Lista rezerwacji: ");
@@ -46,6 +63,7 @@ public abstract class BazaDanych {
         }
     }
 
+    //Metoda getKlienci wypisuje Klientów z bazy danych
     public static void getKlienci() {
         int iter=1;
         System.out.println("Lista klientow: ");
@@ -55,6 +73,7 @@ public abstract class BazaDanych {
         }
     }
 
+    //Metoda getPosrednicy wypisuje pośredników z bazy danych
     public static void getPosrednicy() {
         int iter=1;
         System.out.println("Lista posrednikow: ");
