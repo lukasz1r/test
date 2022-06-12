@@ -2,18 +2,30 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * <h3>Klasa klient umożliwia tworzenie oraz zarządzanie klientem</h3>
+ * <p>Jej parametry to:</p>
+ * <ul>
+ *      <li>imie - imie klienta</li>
+ *      <li>nazwisko - nazwisko klienta</li>
+ *      <li>PESEL - pesel klienta</li>
+ *      <li>wykupioneLoty - listę lotów wykupionych przez klienta</li>
+ * </ul>
+ */
 public class Klient {
     
     private String imie, nazwisko, PESEL;
 
     List<Rezerwacja> wykupioneLoty = new ArrayList<Rezerwacja>();
 
+    //Konstruktor klienta
     Klient(String imie, String nazwisko, String PESEL){
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.PESEL = PESEL;
     }
 
+    //Metoda rezerwowania lotów
     public void rezerwujLot() throws Exception{
         String x1,x2;
         int pom=0;
@@ -42,12 +54,18 @@ public class Klient {
         }
         if(pom==0) throw new Exception("Wybrano nieprawidłową trasę!");
     }
+
+    //Metoda getImie zwracająca imie klienta
     public String getImie() {
         return imie;
     }
+
+    //Metoda getNazwisko zwracająca nazwisko klienta
     public String getNazwisko() {
         return nazwisko;
     }
+
+    //Metoda getPESEL zwracająca pesel klienta
     public String getPESEL() {
         return PESEL;
     }
