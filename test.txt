@@ -4,7 +4,7 @@ McDonell class SredniSamolot
 Concorde class MalySamolot
 -
 Warszawa 25 18
-Berlin 25 17
+Berlin 16 15
 NowyYork -75 6
 Singapur 110 -10
 Oslo 20 25
