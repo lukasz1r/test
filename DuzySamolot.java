@@ -1,5 +1,5 @@
 /*
- * <h3>Klasa DuzySamolot definiuje największą dostępną maszynę.</h3>
+ * <h3>Klasa DuzySamolot definiuje dostępną dużą maszynę.</h3>
  * <p>Parametry</p>
  * <ul>
  *      <li>iloscMiejsc -> Maksymalna ilość miejsc jaką może pomieścić samolot</li>
@@ -9,13 +9,11 @@
  */
 
 public class DuzySamolot extends Maszyna{
-    protected int iloscMiejsc = 200;
-    protected int zasieg = 4000;
-
+  
     DuzySamolot(String nazwa){
-        super.iloscMiejsc=iloscMiejsc;
+        super.iloscMiejsc=200;
         super.nazwa=nazwa;
-        super.zasieg=zasieg;
+        super.zasieg=4000;
     }
 }
     

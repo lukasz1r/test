@@ -9,13 +9,11 @@
  */
 
 public class WielkiSamolot extends Maszyna{
-    protected int iloscMiejsc = 400;
-    protected int zasieg = 5000;
-
+   
     WielkiSamolot(String nazwa){
-        super.iloscMiejsc=iloscMiejsc;
+        super.iloscMiejsc=400;
         super.nazwa=nazwa;
-        super.zasieg=zasieg;
+        super.zasieg=5000;
     }
 }
     

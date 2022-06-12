@@ -1,5 +1,5 @@
 /*
- * <h3>Klasa MalySamolot definiuje największą dostępną maszynę.</h3>
+ * <h3>Klasa MalySamolot definiuje najmniejszą dostępną maszynę.</h3>
  * <p>Parametry</p>
  * <ul>
  *      <li>iloscMiejsc -> Maksymalna ilość miejsc jaką może pomieścić samolot</li>
@@ -10,12 +10,9 @@
 
 public class MalySamolot extends Maszyna{
     
-    protected int iloscMiejsc=20;
-    protected int zasieg=500;
-
     MalySamolot(String nazwa){
-        super.iloscMiejsc=iloscMiejsc;
+        super.iloscMiejsc=20;
         super.nazwa=nazwa;
-        super.zasieg=zasieg;
+        super.zasieg=500;
     }
 }

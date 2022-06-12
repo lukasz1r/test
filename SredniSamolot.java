@@ -1,5 +1,5 @@
 /*
- * <h3>Klasa SredniSamolot definiuje największą dostępną maszynę.</h3>
+ * <h3>Klasa SredniSamolot definiuje dostępną maszynę średniego rozmiaru.</h3>
  * <p>Parametry</p>
  * <ul>
  *      <li>iloscMiejsc -> Maksymalna ilość miejsc jaką może pomieścić samolot</li>
@@ -9,13 +9,11 @@
  */
 
 public class SredniSamolot extends Maszyna{
-    protected int iloscMiejsc = 100;
-    protected int zasieg = 3000;
-
+ 
     SredniSamolot(String nazwa){
-        super.iloscMiejsc=iloscMiejsc;
+        super.iloscMiejsc=100;
         super.nazwa=nazwa;
-        super.zasieg=zasieg;
+        super.zasieg=3000;
     }
 }
     
