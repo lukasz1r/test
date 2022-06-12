@@ -2,15 +2,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/*
+ * <h3>Klasa pośrednik definiuje pośredników wykupujących więcej niż jeden bilet.</h3>
+ * <p>Paramtery to:</p>
+ * <ul>
+ *      <li>nazwa - nazwa pośrednika</li>
+ *      <li>wykupioneLoty - lista wykupionych przez pośrednika lotów </li>
+ * </ul>
+ */
+
 public class Posrednik {
 
     private String nazwa;
     List<Rezerwacja> wykupioneLoty = new ArrayList<Rezerwacja>();
 
+    //Konstruktor pośrednika
     Posrednik(String nazwa){
         this.nazwa = nazwa;
     }
 
+    //Metoda rezerwacji biletów przez pośrednika
     public void rezerwujBilety()throws Exception{
         String poczatek,koniec;
         int bilety,pom=0;
@@ -41,6 +52,8 @@ public class Posrednik {
         }
         if(pom==0) throw new Exception("Rezerwacja zakonczona niepowodzeniem!");
     }
+
+    //Metoda getNazwa zwracająca nazwę pośrednika
     public String getNazwa() {
         return nazwa;
     }
