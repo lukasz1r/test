@@ -13,7 +13,7 @@ public class Trasa{
         this.czestotliwosc = czestotliwosc;
         this.czasOdlotu = czasOdlotu;
         this.iloscMiejsc=iloscMiejsc;
-        odleglosc=Math.sqrt(Math.pow(poczatek.getX()-koniec.getX(),2)+Math.pow(poczatek.getY()-koniec.getY(),2));
+        odleglosc= 70 * Math.sqrt(Math.pow(poczatek.getX()-koniec.getX(),2)+Math.pow(poczatek.getY()-koniec.getY(),2));
         cena = odleglosc*2.45;
     }
 
