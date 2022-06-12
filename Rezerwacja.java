@@ -1,5 +1,5 @@
 /**
- * <h3>Klasa rezerwacja</h>
+ * <h3>Klasa rezerwacja</h3>
  * <p>Zawiera parametry: </p>
  * <ul>
  *      <li>cena - cena rezerwacji</li>
