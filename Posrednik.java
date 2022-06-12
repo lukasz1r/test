@@ -32,6 +32,7 @@ public class Posrednik {
                                 BazaDanych.Rezerwacje.add(lot);
                                 wykupioneLoty.add(lot);
                                 for(int h = 0; h<bilety;h++) t.zakup();
+                                pom=1;
                             }
                         }
                     }
