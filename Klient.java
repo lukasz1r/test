@@ -27,7 +27,7 @@ public class Klient {
                 for(Lotnisko y : BazaDanych.Lotniska){
                     if(y.getNazwa().equals(x2)){
                         for(Trasa i : BazaDanych.Trasy){
-                            if(i.getPoczatek().getNazwa().equals(x1)&&i.getKoniec().getNazwa().equals(x2)){
+                            if(i.getPoczatek().getNazwa().equals(x1)&&i.getKoniec().getNazwa().equals(x2)&&i.getIloscMiejsc()>0){
                                 Rezerwacja lot = new Rezerwacja(i);
                                 System.out.println("Zarezerwowano lot do: "+i.getKoniec().getNazwa()+"!");
                                 BazaDanych.Rezerwacje.add(lot);
