@@ -3,12 +3,12 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-/*
+/**
  * <h3>Klasa Komendy zawiera zbiór wszystkich metod wykorzystywanych do obsługi systemu.</h3>
  */
 public abstract class Komendy {
 
-    //Metoda dodajLotnisko tworzy obiekt lotniska
+    //!Metoda dodajLotnisko tworzy obiekt lotniska
     public static void dodajLotnisko() throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
@@ -24,7 +24,7 @@ public abstract class Komendy {
             System.out.println("Dodano lotnisko!");
     }
 
-    //Metoda usunLotnisko usuwa obiekt lotniska
+    //!Metoda usunLotnisko usuwa obiekt lotniska
     public static void usunLotnisko()throws Exception{
             Scanner scan = new Scanner(System.in);
             int pom = 0, iter = 0;
@@ -43,7 +43,7 @@ public abstract class Komendy {
             if(pom!=1) throw new Exception("Brak lotniska w bazie danych!"); 
     }
 
-    //Metoda dodajSamolot dodaje samolot
+    //!Metoda dodajSamolot dodaje samolot
     public static void dodajSamolot()throws Exception{
             String nazwa;
             int x=5;
@@ -78,7 +78,7 @@ public abstract class Komendy {
                 }
     }
 
-    //Metoda usunSamolot usuwa samolot
+    //!Metoda usunSamolot usuwa samolot
     public static void usunSamolot()throws Exception{
             Scanner scan = new Scanner(System.in);
             int iter = 0,pom = 0;
@@ -97,7 +97,7 @@ public abstract class Komendy {
             if(pom!=1) throw new Exception("Brak samolotu w bazie danych!"); 
     }
 
-    //Metoda dodajTrase dodaje trasę
+    //!Metoda dodajTrase dodaje trasę
     public static void dodajTrase()throws Exception { 
         String poczatek,koniec;
         int g,m,czestotliwosc=0,iloscMiejsc=0, pom=0;
@@ -138,7 +138,7 @@ public abstract class Komendy {
             if(pom!=1) throw new Exception("Nieodpowiednie dane!"); 
     }  
 
-    //Metoda usunTrase usuwa trasę
+    //!Metoda usunTrase usuwa trasę
     public static void usunTrase()throws Exception{
             Scanner scan = new Scanner(System.in);
             String poczatek, koniec;
@@ -160,7 +160,7 @@ public abstract class Komendy {
             if(pom!=1) throw new Exception("Brak trasy w bazie danych!"); 
     }   
 
-    //Metoda dodajKlienta dodaje klienta
+    //!Metoda dodajKlienta dodaje klienta
     public static void dodajKlienta(){
         Scanner scan = new Scanner(System.in);
         String imie,nazwisko,PESEL;
@@ -175,7 +175,7 @@ public abstract class Komendy {
         System.out.println("Dodano klienta!");
     }
 
-    //Metoda usunKlienta usuwa klienta
+    //!Metoda usunKlienta usuwa klienta
     public static void usunKlienta()throws Exception{
             Scanner scan = new Scanner(System.in);
             String imie, nazwisko, PESEL;
@@ -200,7 +200,7 @@ public abstract class Komendy {
             if (pom!=1) throw new Exception("Brak klienta w bazie danych");; 
     }
 
-    //Metoda dodajPosrednika dodaje pośrednika
+    //!Metoda dodajPosrednika dodaje pośrednika
     public static void dodajPosrednika(){
             Scanner scan = new Scanner(System.in);
             String nazwa;
@@ -211,7 +211,7 @@ public abstract class Komendy {
             System.out.println("Dodano pośrednika!");
     }
 
-    //Metoda usunPosrednika usuwa pośrednika
+    //!Metoda usunPosrednika usuwa pośrednika
     public static void usunPosrednika()throws Exception{
             Scanner scan = new Scanner(System.in);
             String nazwa;
@@ -231,7 +231,7 @@ public abstract class Komendy {
             if(pom!=1) throw new Exception("Brak firmy w bazie danych!"); 
     }
 
-    //Metoda wybierzUzytkownika umożliwia zalogowanie się do systemu
+    //!Metoda wybierzUzytkownika umożliwia zalogowanie się do systemu
     public static Pomoc wybierzUzytkownika() throws Exception{
             Scanner scan = new Scanner(System.in);
             int x, iter;
@@ -291,7 +291,7 @@ public abstract class Komendy {
             }
         }
 
-    //Metoda zapis zapisuje dane do pliku 
+    //!Metoda zapis zapisuje dane do pliku 
     public static void zapis() throws FileNotFoundException {
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj nazwe pliku do zapisu: ");
@@ -331,7 +331,7 @@ public abstract class Komendy {
         zapis.close();
     }
 
-    //Metoda wczytywanie wczytuje dane z pliku
+    //!Metoda wczytywanie wczytuje dane z pliku
     public static void wczytywanie() throws FileNotFoundException {
         Scanner scan = new Scanner(System.in);
         System.out.print("Podaj nazwe pliku do odczytu: ");

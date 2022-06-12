@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa SredniSamolot definiuje dostępną maszynę średniego rozmiaru.</h3>
  * <p>Parametry</p>
  * <ul>

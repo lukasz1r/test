@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa DuzySamolot definiuje dostępną dużą maszynę.</h3>
  * <p>Parametry</p>
  * <ul>

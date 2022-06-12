@@ -1,6 +1,6 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
-/*
+/**
  * <h3>Klasa Interfejs jest głównym miejscem, z którego wykonywane są wszystkie operacje systemu.
  * To tutaj znajduje się implementacja Menu w formie konstrukcji SWITCH</h3>
  */
@@ -9,7 +9,7 @@ public class Interfejs {
         Scanner scan = new Scanner(System.in);
         Pomoc pom=new Pomoc(0, 0);
         int petla1=0;
-        //Logowanie się do systemu
+        //!Logowanie się do systemu
         while(petla1==0){
             try {
                 System.out.println("\nKontrola lotow!\n");
@@ -30,7 +30,7 @@ public class Interfejs {
                     int petla2=0;
                     while(petla2==0){
                         try{
-                            //Opcje możliwe do wykonania jako administrator
+                            //!Opcje możliwe do wykonania jako administrator
                             System.out.println("\nWybierz operaje:");
                             System.out.println("1. Dodaj samolot");
                             System.out.println("2. Usun samolot");
@@ -170,7 +170,7 @@ public class Interfejs {
                     while(petla2==0){
                         try{
                             int x;
-                            //Możliwe operacje do wykonania jako Klient
+                            //!Możliwe operacje do wykonania jako Klient
                             System.out.println("\nWybierz operacje: ");
                             System.out.println("1. Rezerwuj");
                             System.out.println("2. Sprawdz swoje loty");
@@ -220,7 +220,7 @@ public class Interfejs {
                     while(petla2==0){
                         try{
                             int x;
-                            //Możliwe operacje do wykonania jako Pośrednik
+                            //!Możliwe operacje do wykonania jako Pośrednik
                             System.out.println("\nWybierz operacje:");
                             System.out.println("1. Rezerwuj");
                             System.out.println("2. Sprawdz swoje loty");

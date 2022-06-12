@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa Trasa obsługuje dodawanie i kontrolę tras między miastami.</h3> 
  * <p>Paramtery jakie posiada klasa Trasa:</p>
  * <ul>
@@ -21,7 +21,7 @@ public class Trasa{
     private double odleglosc,cena;
     private Czas czasOdlotu;
 
-    //Konstruktor trasy
+    //!Konstruktor trasy
     Trasa(Lotnisko poczatek, Lotnisko koniec, int czestotliwosc, Czas czasOdlotu, int iloscMiejsc, Maszyna przypisanaMaszyna){
         this.przypisanaMaszyna=przypisanaMaszyna;
         this.poczatek = poczatek;
@@ -33,52 +33,52 @@ public class Trasa{
         cena = odleglosc*2.45;
     }
 
-    //Metoda zakup kontroluje ilość dostępnych miejsc na trasie, usuwając kolejne miejsce po dokonaniu zakupu.
+    //!Metoda zakup kontroluje ilość dostępnych miejsc na trasie, usuwając kolejne miejsce po dokonaniu zakupu.
     public void zakup(){
         iloscMiejsc--;
     }
 
-    //Metoda getIloscMiejsc zwraca ilość miejsc
+    //!Metoda getIloscMiejsc zwraca ilość miejsc
     public int getIloscMiejsc() {
         return iloscMiejsc;
     }
 
-    //Metoda getCena zwraca cenę biletu
+    //!Metoda getCena zwraca cenę biletu
     public double getCena(){
         return cena;
     }
 
-    //Metoda getOdleglosc zwraca odległość między lotniskami
+    //!Metoda getOdleglosc zwraca odległość między lotniskami
     public double getOdleglosc(){
         return odleglosc;
     }
 
-    //Metoda getCzas zwraca ilość czas trwania lotu
+    //!Metoda getCzas zwraca ilość czas trwania lotu
     public Czas getCzas(){
         return czasOdlotu;
     }
 
-    //Metoda getPoczatek zwraca lotnisko startowe
+    //!Metoda getPoczatek zwraca lotnisko startowe
     public Lotnisko getPoczatek(){
         return poczatek;
     }
     
-    //Metoda getKoniec zwraca lotnisko końcowe
+    //!Metoda getKoniec zwraca lotnisko końcowe
     public Lotnisko getKoniec(){
         return koniec;
     }
 
-    //Metoda getMaszyna zwraca przypisaną maszynę
+    //!Metoda getMaszyna zwraca przypisaną maszynę
     public Maszyna getMaszyna(){
         return przypisanaMaszyna;
     }
 
-    //Metoda getIntCzestotliwosc zwraca ilość lotów w ciągu tygodnia w formie liczby
+    //!Metoda getIntCzestotliwosc zwraca ilość lotów w ciągu tygodnia w formie liczby
     public int getIntCzestotliwosc(){
         return czestotliwosc;
     }
 
-    //Metoda getCzestotliwosc zwraca ilość lotów w ciągu tygodnia w formie tekstu
+    //!Metoda getCzestotliwosc zwraca ilość lotów w ciągu tygodnia w formie tekstu
     public String getCzestotliwosc(){
         if(czestotliwosc==1) return "Codziennie";
         else if(czestotliwosc==2) return "Raz w tygodniu";
@@ -86,7 +86,7 @@ public class Trasa{
         return "";
     }
 
-    //Metoda toString wypisuje lotnisko początkowe i końcowe
+    //!Metoda toString wypisuje lotnisko początkowe i końcowe
     public String toString(){
         return poczatek.getNazwa()+" -> "+koniec.getNazwa();
     }

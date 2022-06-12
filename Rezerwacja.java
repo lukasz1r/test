@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa rezerwacja</h>
  * <p>Zawiera parametry: </p>
  * <ul>
@@ -15,21 +15,21 @@ public class Rezerwacja{
     private Trasa trasa;
     private Czas czas;
 
-    //Konstruktor rezerwacji
+    //!Konstruktor rezerwacji
     Rezerwacja(Trasa trasa){
         this.trasa = trasa;
         this.cena = trasa.getCena();
         this.czas = trasa.getCzas();   
     }
 
-    //Metoda getTrasa zwraca trasę
+    //!Metoda getTrasa zwraca trasę
     public Trasa getTrasa(){
         for(Trasa i : BazaDanych.Trasy){
             if(i.equals(trasa)) return i;
         }
         return null;
     }
-    //Metoda toString wypisuje paramtery rezerwacji
+    //!Metoda toString wypisuje paramtery rezerwacji
     public String toString() {
         return trasa + " | " + cena + " | " + czas;
     }

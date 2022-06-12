@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa WielkiSamolot definiuje największą dostępną maszynę.</h3>
  * <p>Parametry</p>
  * <ul>

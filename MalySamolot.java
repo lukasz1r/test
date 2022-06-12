@@ -1,4 +1,4 @@
-/*
+/**
  * <h3>Klasa MalySamolot definiuje najmniejszą dostępną maszynę.</h3>
  * <p>Parametry</p>
  * <ul>
