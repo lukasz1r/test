@@ -1,13 +1,24 @@
-siurek class WielkiSamolot
+Boeing class WielkiSamolot
+AirBus class DuzySamolot
+McDonell class SredniSamolot
+Concorde class MalySamolot
 -
-Warszawa 42 5
-Berlin 42 6
+Warszawa 25 18
+Berlin 25 17
+NowyYork -75 6
+Singapur 110 -10
+Oslo 20 25
 -
-Warszawa Berlin 2 12 30 52 siurek
+Warszawa Berlin 2 12 30 52 Boeing
+NowyYork Oslo 3 7 40 300 AirBus
+Singapur Berlin 1 3 50 100 McDonell
 -
 dawid kob 1233
 lukasz kali 2525
 adam karp 4321
 -
-chujuwStoSA
+ItakaSA
+TrivagoSA
+AirbnbSA
+KancelariaSA
 -
