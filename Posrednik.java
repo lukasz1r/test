@@ -26,7 +26,7 @@ public class Posrednik {
                 for(Lotnisko x2 : BazaDanych.Lotniska){
                     if(x2.getNazwa().equals(koniec)){
                         for(Trasa t : BazaDanych.Trasy){
-                            if(t.getPoczatek().getNazwa().equals(poczatek)&&t.getKoniec().getNazwa().equals(koniec)){
+                            if(t.getPoczatek().getNazwa().equals(poczatek)&&t.getKoniec().getNazwa().equals(koniec)&&t.getIloscMiejsc()>=bilety){
                                 Rezerwacja lot = new Rezerwacja(t);
                                 System.out.println("Kupiono bilet/y do: "+t.getKoniec().getNazwa()+" x"+bilety+"!");
                                 BazaDanych.Rezerwacje.add(lot);
@@ -38,7 +38,7 @@ public class Posrednik {
                 }
             }
         }
-        if(pom==0) throw new Exception("Wybrano nieprawidłową trasę!");
+        if(pom==0) throw new Exception("Rezerwacja zakonczona niepowodzeniem!");
     }
     public String getNazwa() {
         return nazwa;

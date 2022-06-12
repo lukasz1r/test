@@ -32,7 +32,7 @@ public abstract class BazaDanych {
         System.out.println("Lista tras: ");
         for(Trasa i : Trasy){
             System.out.println(iter+".  "+ i.getPoczatek().getNazwa()+" -> "+i.getKoniec().getNazwa()+"\n"+i.getCzas()+" | "
-            +Math.round(i.getOdleglosc()*100.0)/100.0 +"km"+" | cena: "+Math.round(i.getCena()*100.0)/100.0+"\nmiejsc: "+i.getIloscMiejsc()+" "+ i.getCzestotliwosc());
+            +Math.round(i.getOdleglosc()*100.0)/100.0 +"km"+" | cena: "+Math.round(i.getCena()*100.0)/100.0+"\nmiejsc: "+i.getIloscMiejsc()+" "+ i.getCzestotliwosc()+"\n"+i.getMaszyna().nazwa);
             iter++;
         }   
     }
